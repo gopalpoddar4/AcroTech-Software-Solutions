@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore software development, web engineering, mobile app development, and UI/UX design services from AcroTech Software Solutions.">
+  <meta name="description"
+    content="Explore software development, web development, mobile applications, UI/UX design, API integration, and digital solutions from AcroTech Software Solutions.">
   <title>Our Services | AcroTech Software Solutions</title>
 
   <!-- Favicon References -->
@@ -13,7 +15,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/variables.css">
@@ -24,6 +28,7 @@
   <link rel="stylesheet" href="../css/pages/services.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
+
 <body>
 
   <div class="page-wrapper">
@@ -48,20 +53,14 @@
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="../index.html" class="nav-link" data-page="home">Home</a>
           <a href="about.html" class="nav-link" data-page="about">About</a>
-          <a href="services.html" class="nav-link" data-page="services">Services</a>
+          <a href="services.html" class="nav-link active" data-page="services" aria-current="page">Services</a>
           <a href="career.html" class="nav-link" data-page="career">Career</a>
           <a href="../index.html#contact" class="btn btn-primary btn-sm nav-cta desktop-only">Let's Talk</a>
         </nav>
 
         <!-- Hamburger (mobile) -->
-        <button
-          class="hamburger-btn"
-          id="hamburger-btn"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-        >
+        <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-nav">
           <span class="hamburger-line" aria-hidden="true"></span>
           <span class="hamburger-line" aria-hidden="true"></span>
           <span class="hamburger-line" aria-hidden="true"></span>
@@ -76,7 +75,7 @@
         <div class="mobile-nav-links">
           <a href="../index.html" class="mobile-nav-link" data-page="home">Home</a>
           <a href="about.html" class="mobile-nav-link" data-page="about">About</a>
-          <a href="services.html" class="mobile-nav-link" data-page="services">Services</a>
+          <a href="services.html" class="mobile-nav-link active" data-page="services" aria-current="page">Services</a>
           <a href="career.html" class="mobile-nav-link" data-page="career">Career</a>
         </div>
         <div class="mobile-nav-cta">
@@ -85,66 +84,1116 @@
       </nav>
     </header>
 
-    <!-- ======== MAIN CONTENT (Preserved Foundation) ======== -->
+    <!-- ======== MAIN CONTENT ======== -->
     <main class="main-content" id="main-content">
 
-      <!-- Page Hero -->
-      <section class="page-hero">
-        <div class="container">
-          <span class="section-label">What We Do</span>
-          <h1 class="page-hero-title">Our Services</h1>
-          <p class="page-hero-subtitle">
-            Placeholder — detailed service descriptions will be added in Phase 2.
-          </p>
+      <!-- ============================================
+           SECTION 1: SERVICES HERO
+           ============================================ -->
+      <section class="services-hero" id="services-hero">
+        <div class="container container-wide">
+          <div class="services-hero-grid">
+
+            <!-- Hero Left Content -->
+            <div class="services-hero-content">
+              <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                <span>OUR SERVICES</span>
+              </div>
+
+              <h1 class="services-hero-title">
+                The Right Technology. <span class="text-highlight">Built Around Your Goals.</span>
+              </h1>
+
+              <p class="services-hero-lead">
+                Every business has its own challenges, ambitions, and opportunities. At AcroTech Software Solutions,
+                we help turn those needs into practical digital solutions through thoughtful software development,
+                intuitive design, and technology chosen for the problem at hand.
+              </p>
+
+              <div class="services-hero-tagline" role="note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>From the first idea to a working digital solution, let's build with purpose.</span>
+              </div>
+
+              <div class="services-hero-actions">
+                <a href="../index.html#contact" class="btn btn-primary btn-lg">
+                  Discuss Your Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#services-overview" class="btn btn-secondary btn-lg">
+                  Explore Our Services
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Right Visual: Service Ecosystem Console -->
+            <div class="services-hero-visual" aria-hidden="true">
+              <div class="console-window">
+                <div class="console-topbar">
+                  <div class="console-dots">
+                    <span class="console-dot console-dot-red"></span>
+                    <span class="console-dot console-dot-yellow"></span>
+                    <span class="console-dot console-dot-green"></span>
+                  </div>
+                  <span class="console-title">acrotech.services // ecosystem-mesh</span>
+                  <div class="console-badge">
+                    <span class="console-pulse"></span>
+                    <span>Full Suite Operational</span>
+                  </div>
+                </div>
+
+                <div class="console-body">
+                  <div class="console-capability-grid">
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="16 18 22 12 16 6"></polyline>
+                          <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">Custom Software</span>
+                        <span class="capability-sub">Core Engine</span>
+                      </div>
+                    </div>
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap accent">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="2" y1="12" x2="22" y2="12"></line>
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">Web Development</span>
+                        <span class="capability-sub">Responsive Web</span>
+                      </div>
+                    </div>
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                          <line x1="8" y1="21" x2="16" y2="21"></line>
+                          <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">Web Applications</span>
+                        <span class="capability-sub">Interactive Systems</span>
+                      </div>
+                    </div>
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">Mobile Apps</span>
+                        <span class="capability-sub">User Workflows</span>
+                      </div>
+                    </div>
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap accent">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                          <path d="M2 2l7.586 7.586"></path>
+                          <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">UI/UX Design</span>
+                        <span class="capability-sub">Product Usability</span>
+                      </div>
+                    </div>
+
+                    <div class="capability-chip">
+                      <div class="capability-icon-wrap purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="18" cy="5" r="3"></circle>
+                          <circle cx="6" cy="12" r="3"></circle>
+                          <circle cx="18" cy="19" r="3"></circle>
+                          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                      </div>
+                      <div class="capability-info">
+                        <span class="capability-name">API &amp; Integration</span>
+                        <span class="capability-sub">System Mesh</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Metrics Strip -->
+                  <div class="console-metrics">
+                    <div class="console-metric-item">
+                      <span class="console-metric-label">Strategy</span>
+                      <span class="console-metric-val">Business-First</span>
+                    </div>
+                    <div class="console-metric-item">
+                      <span class="console-metric-label">Execution</span>
+                      <span class="console-metric-val accent">Clean &amp; Tested</span>
+                    </div>
+                    <div class="console-metric-item">
+                      <span class="console-metric-label">Lifecycle</span>
+                      <span class="console-metric-val">Maintainable</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      <!-- Section: Service Offerings (placeholder) -->
-      <section class="placeholder-section" id="service-offerings">
+      <!-- ============================================
+           SECTION 2: SERVICE OVERVIEW (7 SERVICES)
+           ============================================ -->
+      <section class="services-overview-section" id="services-overview">
         <div class="container">
           <div class="section-header-center">
-            <h2 class="section-title">Service Offerings</h2>
-            <p class="section-subtitle">Placeholder for the services grid.</p>
-          </div>
-          <div class="placeholder-block">
-            <p>Individual service cards will be designed in Phase 2.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: How We Work (placeholder) -->
-      <section class="placeholder-section" id="process">
-        <div class="container">
-          <div class="section-header-center">
-            <h2 class="section-title">How We Work</h2>
-            <p class="section-subtitle">Placeholder for process / methodology section.</p>
-          </div>
-          <div class="placeholder-block">
-            <p>Process steps will be designed in Phase 2.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section: Trusted By (placeholder) -->
-      <section class="placeholder-section" id="trusted-by">
-        <div class="container">
-          <div class="section-header-center">
-            <h2 class="section-title">Trusted By</h2>
+            <span class="section-label">WHAT WE CAN HELP YOU BUILD</span>
+            <h2 class="section-title">Digital Solutions for Real-World Challenges.</h2>
             <p class="section-subtitle">
-              This section will display authorized partner and client logos in Phase 2.
+              A successful digital solution begins with understanding what needs to change, improve, or become possible.
+              Explore our service areas to find the right starting point for your project.
             </p>
           </div>
-          <div class="placeholder-block">
-            <p>Client / partner logos will be added with proper authorization in Phase 2. No logos are shown as placeholders to avoid implying false relationships.</p>
+
+          <!-- Featured Service 1: Custom Software Development -->
+          <div class="featured-service-card" id="service-custom-software">
+            <div class="featured-grid">
+              <div>
+                <span class="service-badge-mini">01 // ENTERPRISE CORE</span>
+                <h3 class="featured-service-title">Custom Software Development</h3>
+                <p class="featured-service-short">
+                  Software shaped around the way your business actually works.
+                </p>
+                <p class="featured-service-desc">
+                  Off-the-shelf tools do not always fit every workflow. We help define and develop software solutions
+                  around specific requirements, business processes, and operational challenges, with an emphasis on
+                  usability, maintainability, and practical value.
+                </p>
+                <a href="../index.html#contact" class="btn btn-primary">
+                  Discuss Custom Software
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Use cases box -->
+              <div class="usecases-box">
+                <div class="usecases-header">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                  <span>Potential Applications</span>
+                </div>
+                <div class="usecases-list">
+                  <div class="usecase-item">
+                    <span class="usecase-bullet"></span>
+                    <span>Internal business tools and dashboards.</span>
+                  </div>
+                  <div class="usecase-item">
+                    <span class="usecase-bullet"></span>
+                    <span>Workflow and process management systems.</span>
+                  </div>
+                  <div class="usecase-item">
+                    <span class="usecase-bullet"></span>
+                    <span>Custom business applications.</span>
+                  </div>
+                  <div class="usecase-item">
+                    <span class="usecase-bullet"></span>
+                    <span>Software tailored to specific operational needs.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Catalog Grid (Services 2 through 7) -->
+          <div class="services-catalog-grid">
+
+            <!-- Service 2: Website Development -->
+            <div class="service-card" id="service-website-development">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box cyan" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">02 // DIGITAL PRESENCE</span>
+                </div>
+
+                <h3 class="service-card-title">Website Development</h3>
+                <p class="service-card-short">Professional websites designed to communicate your value.</p>
+                <p class="service-card-desc">
+                  Your website is often the first interaction someone has with your business. We aim to create
+                  responsive, accessible, and well-structured websites that present your brand clearly, communicate
+                  your services, and help visitors understand what to do next.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Business and corporate websites.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Landing pages and service websites.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Company portfolios.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Website redesigns and improvements.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Discuss a Website
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 3: Web Application Development -->
+            <div class="service-card" id="service-web-applications">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box indigo" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">03 // INTERACTIVE SYSTEMS</span>
+                </div>
+
+                <h3 class="service-card-title">Web Application Development</h3>
+                <p class="service-card-short">Useful web applications that help people get things done.</p>
+                <p class="service-card-desc">
+                  When a business needs more than a traditional website, a web application can help organize
+                  information, support user workflows, and make digital services easier to access. We focus on
+                  understanding the required functionality before shaping the right solution.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Business dashboards.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Task and workflow applications.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>User-facing online tools.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Web-based management systems.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Explore Web Applications
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 4: Mobile App Development -->
+            <div class="service-card" id="service-mobile-apps">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box purple" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">04 // USER EXPERIENCE</span>
+                </div>
+
+                <h3 class="service-card-title">Mobile App Development</h3>
+                <p class="service-card-short">Mobile experiences built around real user needs.</p>
+                <p class="service-card-desc">
+                  Mobile applications can make services more accessible, support everyday workflows, and bring useful
+                  functionality closer to users. We approach mobile app development with attention to usability,
+                  performance, maintainability, and the intended platform requirements.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Customer-facing mobile applications.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Business and productivity apps.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Digital service applications.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Mobile interfaces for existing systems.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Discuss a Mobile App
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 5: UI/UX and Digital Product Design -->
+            <div class="service-card" id="service-ui-ux-design">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box cyan" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                      <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                      <path d="M2 2l7.586 7.586"></path>
+                      <circle cx="11" cy="11" r="2"></circle>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">05 // PRODUCT ARCHITECTURE</span>
+                </div>
+
+                <h3 class="service-card-title">UI/UX and Digital Product Design</h3>
+                <p class="service-card-short">Thoughtful interfaces. Clearer digital experiences.</p>
+                <p class="service-card-desc">
+                  A digital product should not only look good; it should also make sense to the people using it. We
+                  focus on organizing information, improving navigation, and designing interfaces that help users
+                  understand and complete tasks more comfortably.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Website and application interfaces.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>User flows and wireframes.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Interface redesigns.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Usability and layout improvements.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Discuss Your Design
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 6: API Integration and System Connectivity -->
+            <div class="service-card" id="service-api-integration">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box indigo" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="18" cy="5" r="3"></circle>
+                      <circle cx="6" cy="12" r="3"></circle>
+                      <circle cx="18" cy="19" r="3"></circle>
+                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">06 // DATA &amp; PLATFORMS</span>
+                </div>
+
+                <h3 class="service-card-title">API Integration and System Connectivity</h3>
+                <p class="service-card-short">Helping different parts of your digital system work together.</p>
+                <p class="service-card-desc">
+                  Digital products often depend on multiple services and data sources. API integration can help systems
+                  exchange information and support connected workflows. The right approach depends on the existing
+                  systems, available interfaces, security requirements, and project scope.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Connecting a frontend to an existing backend.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Integrating available third-party APIs.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Connecting compatible systems and services.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Improving data flow between supported applications.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Discuss an Integration
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 7: Software Maintenance and Improvement -->
+            <div class="service-card" id="service-maintenance">
+              <div>
+                <div class="service-card-header">
+                  <div class="service-card-icon-box purple" aria-hidden="true">
+                    <svg class="service-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                  </div>
+                  <span class="service-badge-mini">07 // LIFECYCLE &amp; STABILITY</span>
+                </div>
+
+                <h3 class="service-card-title">Software Maintenance and Improvement</h3>
+                <p class="service-card-short">Helping existing digital products move forward.</p>
+                <p class="service-card-desc">
+                  Software needs attention as requirements change, users provide feedback, and new issues emerge. We
+                  can assess existing applications and explore improvements related to usability, functionality,
+                  maintainability, and agreed technical requirements.
+                </p>
+
+                <div class="service-card-usecases">
+                  <span class="service-card-usecases-title">Potential Applications</span>
+                  <div class="service-card-usecases-list">
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Existing website improvements.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Application bug investigation and fixes.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Feature enhancements.</span>
+                    </div>
+                    <div class="service-card-usecase-item">
+                      <span class="usecase-bullet"></span>
+                      <span>Code organization and maintainability improvements.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-card-footer">
+                <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                  Discuss an Existing Project
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- Section: CTA (placeholder) -->
-      <section class="placeholder-section" id="services-cta">
+      <!-- ============================================
+           SECTION 3: HOW OUR SERVICES CREATE VALUE
+           ============================================ -->
+      <section class="services-value-section" id="services-value">
         <div class="container">
-          <div class="placeholder-block">
-            <p>Call-to-action section will be designed in Phase 2.</p>
+          <div class="section-header-center">
+            <span class="section-label">THE VALUE BEHIND THE WORK</span>
+            <h2 class="section-title">Technology Should Make Work Better.</h2>
+            <p class="section-subtitle">
+              The purpose of building software is not simply to add another digital tool. It is to make a task easier,
+              an experience clearer, or a business process more effective.
+            </p>
+          </div>
+
+          <div class="value-outcomes-grid">
+
+            <!-- Outcome 1 -->
+            <div class="value-outcome-card">
+              <div class="value-outcome-icon-box" aria-hidden="true">
+                <svg class="value-outcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 14 10 14 10 20"></polyline>
+                  <polyline points="20 10 14 10 14 4"></polyline>
+                  <line x1="14" y1="10" x2="21" y2="3"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="value-outcome-title">Simplify Complex Work</h3>
+              <p class="value-outcome-desc">
+                Explore ways to make repetitive tasks, information flows, and everyday processes easier to manage.
+              </p>
+            </div>
+
+            <!-- Outcome 2 -->
+            <div class="value-outcome-card">
+              <div class="value-outcome-icon-box" aria-hidden="true">
+                <svg class="value-outcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="value-outcome-title">Improve User Experiences</h3>
+              <p class="value-outcome-desc">
+                Create clearer interfaces and more intuitive digital journeys for the people using your products.
+              </p>
+            </div>
+
+            <!-- Outcome 3 -->
+            <div class="value-outcome-card">
+              <div class="value-outcome-icon-box" aria-hidden="true">
+                <svg class="value-outcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+              <h3 class="value-outcome-title">Connect Digital Systems</h3>
+              <p class="value-outcome-desc">
+                Where compatible technologies and APIs are available, bring systems together to support more connected workflows.
+              </p>
+            </div>
+
+            <!-- Outcome 4 -->
+            <div class="value-outcome-card">
+              <div class="value-outcome-icon-box" aria-hidden="true">
+                <svg class="value-outcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="value-outcome-title">Prepare for Future Improvements</h3>
+              <p class="value-outcome-desc">
+                Make considered technical and design decisions that allow a solution to be maintained and improved as needs evolve.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 4: OUR APPROACH TO EVERY PROJECT
+           ============================================ -->
+      <section class="delivery-approach-section" id="delivery-approach">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">HOW WE DELIVER</span>
+            <h2 class="section-title">Clear Thinking Before Lines of Code.</h2>
+            <p class="section-subtitle">
+              The best solution is not always the most complicated one. We aim to understand the problem first, agree
+              on a sensible direction, and build around the needs that matter most.
+            </p>
+          </div>
+
+          <div class="delivery-timeline">
+
+            <!-- Step 01 -->
+            <div class="delivery-stage">
+              <div class="delivery-stage-top">
+                <div class="delivery-stage-bubble" aria-hidden="true">01</div>
+              </div>
+              <div class="delivery-stage-card">
+                <h3 class="delivery-stage-title">
+                  <span class="delivery-stage-num">01 &mdash;</span> Understand
+                </h3>
+                <p class="delivery-stage-desc">
+                  We discuss the business objective, the people involved, the existing challenges, and the functionality needed.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="delivery-stage">
+              <div class="delivery-stage-top">
+                <div class="delivery-stage-bubble" aria-hidden="true">02</div>
+              </div>
+              <div class="delivery-stage-card">
+                <h3 class="delivery-stage-title">
+                  <span class="delivery-stage-num">02 &mdash;</span> Plan
+                </h3>
+                <p class="delivery-stage-desc">
+                  We organize the requirements, identify priorities, consider constraints, and agree on a suitable scope and technical direction.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="delivery-stage">
+              <div class="delivery-stage-top">
+                <div class="delivery-stage-bubble" aria-hidden="true">03</div>
+              </div>
+              <div class="delivery-stage-card">
+                <h3 class="delivery-stage-title">
+                  <span class="delivery-stage-num">03 &mdash;</span> Develop
+                </h3>
+                <p class="delivery-stage-desc">
+                  We implement the solution with attention to usability, code quality, maintainability, and the agreed requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="delivery-stage">
+              <div class="delivery-stage-top">
+                <div class="delivery-stage-bubble" aria-hidden="true">04</div>
+              </div>
+              <div class="delivery-stage-card">
+                <h3 class="delivery-stage-title">
+                  <span class="delivery-stage-num">04 &mdash;</span> Review and Improve
+                </h3>
+                <p class="delivery-stage-desc">
+                  We review the work, test important functionality, discuss feedback, and make agreed refinements.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 5: TECHNOLOGIES & TECHNICAL CAPABILITIES
+           ============================================ -->
+      <section class="tech-capabilities-section" id="tech-capabilities">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">THE RIGHT TOOLS FOR THE JOB</span>
+            <h2 class="section-title">Technology Chosen With Purpose.</h2>
+            <p class="section-subtitle">
+              Every project has different requirements. Our approach is to consider the problem, constraints,
+              maintainability, and intended experience before selecting an appropriate technical solution.
+            </p>
+          </div>
+
+          <div class="tech-matrix-grid">
+
+            <!-- Area 1 -->
+            <div class="tech-matrix-card">
+              <div class="tech-matrix-header">
+                <div class="tech-matrix-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="tech-matrix-title">Architecture &amp; Engineering Core</h3>
+              </div>
+              <p class="tech-matrix-desc">
+                Structuring solutions around maintainability, clean separation of concerns, and clear technical standards
+                that reduce future technical debt.
+              </p>
+              <div class="tech-matrix-features">
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Modular, readable, and well-documented codebases.</span>
+                </div>
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Appropriate architectural patterns for business scope.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area 2 -->
+            <div class="tech-matrix-card">
+              <div class="tech-matrix-header">
+                <div class="tech-matrix-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="tech-matrix-title">Web &amp; Application Interfaces</h3>
+              </div>
+              <p class="tech-matrix-desc">
+                Building responsive, accessible interfaces that function reliably across modern browsers, screen sizes,
+                and network conditions.
+              </p>
+              <div class="tech-matrix-features">
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Modern semantic markup, flexible CSS, and vanilla logic.</span>
+                </div>
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Fast load times, smooth navigation, and clear user feedback.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area 3 -->
+            <div class="tech-matrix-card">
+              <div class="tech-matrix-header">
+                <div class="tech-matrix-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                  </svg>
+                </div>
+                <h3 class="tech-matrix-title">Data Flow &amp; System Integration</h3>
+              </div>
+              <p class="tech-matrix-desc">
+                Connecting system endpoints, structuring data exchange, and integrating compatible services to support
+                cohesive user journeys.
+              </p>
+              <div class="tech-matrix-features">
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Structured API communication and error-handling protocols.</span>
+                </div>
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Disciplined data validation and security considerations.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area 4 -->
+            <div class="tech-matrix-card">
+              <div class="tech-matrix-header">
+                <div class="tech-matrix-icon-box" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </div>
+                <h3 class="tech-matrix-title">Quality &amp; Continuous Improvement</h3>
+              </div>
+              <p class="tech-matrix-desc">
+                Maintaining software health through systematic review, testing of critical workflows, and disciplined
+                attention to detail.
+              </p>
+              <div class="tech-matrix-features">
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Functional testing across key devices and viewports.</span>
+                </div>
+                <div class="tech-feature-item">
+                  <span class="usecase-bullet"></span>
+                  <span>Considered refactoring and maintainability enhancements.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Technology Decision Principles Bar -->
+          <div class="tech-philosophy-bar">
+            <div class="tech-philosophy-lead">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Our Technology Selection Philosophy:</span>
+            </div>
+            <div class="tech-principles-pills">
+              <span class="tech-pill">Requirements First</span>
+              <span class="tech-pill">Maintainability Over Novelty</span>
+              <span class="tech-pill">Practical Performance</span>
+              <span class="tech-pill">Sustainable Architecture</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 6: TRUSTED BY (COLLABORATION & PARTNERSHIP)
+           ============================================ -->
+      <section class="trusted-by-section" id="trusted-by">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">TRUSTED BY</span>
+            <h2 class="section-title">Building Better Digital Experiences, Together.</h2>
+            <p class="section-subtitle">
+              Strong working relationships begin with shared goals, clear communication, and a commitment to creating useful solutions.
+            </p>
+          </div>
+
+          <div class="partnership-card">
+            <div class="partnership-inner">
+              <div class="partnership-icon-box" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="partnership-title">Collaborative Partnerships</h3>
+              <p class="partnership-desc">
+                We believe in working directly alongside founders, business leaders, and technical teams to ensure
+                every project reflects authentic priorities, transparent communication, and dependable execution.
+              </p>
+              <a href="../index.html#contact" class="btn btn-secondary btn-sm">
+                Discuss Your Partnership Goals &rarr;
+              </a>
+            </div>
+
+            <!-- Prepared Container for Verified Logos (Kept hidden until authorized client logos are supplied) -->
+            <div class="verified-client-logos" data-status="pending-assets" aria-hidden="true">
+              <!-- Authorized client logos will be loaded here once confirmed -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 7: FREQUENTLY ASKED QUESTIONS (FAQ)
+           ============================================ -->
+      <section class="faq-section" id="faq">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">COMMON QUESTIONS</span>
+            <h2 class="section-title">A Few Things Worth Knowing.</h2>
+            <p class="section-subtitle">
+              Have questions about how we work or how to begin? Here are straightforward answers to common inquiries.
+            </p>
+          </div>
+
+          <div class="faq-container">
+            <div class="faq-accordion" data-accordion="single" role="region" aria-label="Frequently Asked Questions">
+
+              <!-- Q1 -->
+              <div class="accordion-item is-open">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-1" aria-expanded="true" aria-controls="faq-panel-1">
+                    <span>How do we get started with a project?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+                  <div class="accordion-body">
+                    Start by sharing your idea, business challenge, or existing project requirements. The next step is
+                    to understand your goals, discuss the scope, and determine a suitable direction for the work.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
+                    <span>Can you help if our requirements are not fully defined?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+                  <div class="accordion-body">
+                    Yes, we can begin with a discussion about the problem you want to solve. Clarifying goals,
+                    priorities, and essential functionality can help establish a more practical starting point.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
+                    <span>Can you work on an existing website or application?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+                  <div class="accordion-body">
+                    Depending on the technology, access, condition of the existing codebase, and project requirements, we
+                    can discuss possible improvements, integrations, or further development.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
+                    <span>How much does a software project cost?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+                  <div class="accordion-body">
+                    Project costs depend on factors such as scope, complexity, required functionality, integrations, design
+                    needs, and ongoing support. A more meaningful estimate can be discussed after understanding the
+                    project requirements.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q5 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-5" aria-expanded="false" aria-controls="faq-panel-5">
+                    <span>How long does development take?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+                  <div class="accordion-body">
+                    The timeline depends on the scope, complexity, dependencies, and agreed deliverables. A reasonable
+                    schedule can be discussed after the requirements are understood.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q6 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button type="button" class="accordion-trigger" id="faq-trigger-6" aria-expanded="false" aria-controls="faq-panel-6">
+                    <span>What happens after a project is delivered?</span>
+                    <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </button>
+                </h3>
+                <div class="accordion-collapse" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" hidden>
+                  <div class="accordion-body">
+                    Any follow-up improvements, maintenance, or support should be discussed according to the project's
+                    requirements and the scope agreed upon. The available arrangements can be clarified before work begins.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 8: FINAL CALL TO ACTION
+           ============================================ -->
+      <section class="services-cta-section" id="services-cta">
+        <div class="container">
+          <div class="services-cta-box">
+            <div class="services-cta-inner">
+              <span class="services-cta-eyebrow">LET'S TALK ABOUT YOUR PROJECT</span>
+              <h2 class="services-cta-title">Have a Challenge in Mind? Let's Explore the Right Solution.</h2>
+              <p class="services-cta-lead">
+                Whether you're starting with an idea, improving an existing application, or looking for a better way to
+                manage a business process, the first step is understanding what you need.
+              </p>
+
+              <div class="services-cta-actions">
+                <a href="../index.html#contact" class="btn btn-primary btn-lg">
+                  Discuss Your Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="../index.html" class="btn btn-secondary btn-lg">
+                  Back to Home
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -156,6 +1205,7 @@
       <div class="footer-inner">
         <div class="footer-grid">
 
+          <!-- Brand Column -->
           <div class="footer-brand">
             <a href="../index.html" class="site-logo" aria-label="AcroTech Software Solutions — Home">
               <img src="../assets/logos/logo.png" alt="AcroTech Software Solutions" class="site-logo-img">
@@ -174,10 +1224,11 @@
               <a href="#" class="footer-social-link" aria-label="LinkedIn profile placeholder" title="LinkedIn">in</a>
               <a href="#" class="footer-social-link" aria-label="Twitter / X profile placeholder" title="Twitter / X">X</a>
               <a href="#" class="footer-social-link" aria-label="GitHub profile placeholder" title="GitHub">GH</a>
-              <a href="#" class="footer-social-link" aria-label="Email placeholder" title="Email">@</a>
+              <a href="#" class="footer-social-link" aria-label="Contact placeholder" title="Email">@</a>
             </div>
           </div>
 
+          <!-- Navigation Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Navigation</h3>
             <div class="footer-links">
@@ -188,26 +1239,34 @@
             </div>
           </div>
 
+          <!-- Services Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Services</h3>
             <div class="footer-links">
-              <a href="services.html" class="footer-link">All Services</a>
+              <a href="#service-custom-software" class="footer-link">Custom Software</a>
+              <a href="#service-website-development" class="footer-link">Web Development</a>
+              <a href="#service-mobile-apps" class="footer-link">Mobile Apps</a>
+              <a href="#service-ui-ux-design" class="footer-link">UI/UX &amp; Design</a>
             </div>
           </div>
 
+          <!-- Contact Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Contact</h3>
             <div class="footer-links">
               <span class="footer-link" style="color: var(--color-text-muted);">[Contact email to be provided]</span>
               <span class="footer-link" style="color: var(--color-text-muted);">[Office location to be provided]</span>
-              <a href="../index.html#contact" class="footer-link" style="color: var(--color-accent); font-weight: var(--font-medium);">Start a Discussion &rarr;</a>
+              <a href="../index.html#contact" class="footer-link"
+                style="color: var(--color-accent); font-weight: var(--font-medium);">Start a Discussion &rarr;</a>
             </div>
           </div>
 
         </div>
 
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <p class="footer-copyright">&copy; <span class="js-current-year">2026</span> AcroTech Software Solutions. All rights reserved.</p>
+          <p class="footer-copyright">&copy; <span class="js-current-year">2026</span> AcroTech Software Solutions. All
+            rights reserved.</p>
           <div class="footer-legal">
             <a href="#" class="footer-legal-link">Privacy Policy</a>
             <a href="#" class="footer-legal-link">Terms of Service</a>
@@ -218,8 +1277,10 @@
 
   </div>
 
+  <!-- Scripts -->
   <script src="../js/main.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/components.js"></script>
 </body>
+
 </html>
