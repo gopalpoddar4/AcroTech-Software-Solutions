@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about AcroTech Software Solutions, our engineering approach, mission, and commitment to purposeful digital technology.">
+  <meta name="description"
+    content="Learn about AcroTech Software Solutions, our approach to software development, our values, and our commitment to building practical digital solutions.">
   <title>About Us | AcroTech Software Solutions</title>
 
   <!-- Favicon References -->
@@ -13,7 +15,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/variables.css">
@@ -24,6 +28,7 @@
   <link rel="stylesheet" href="../css/pages/about.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
+
 <body>
 
   <div class="page-wrapper">
@@ -47,21 +52,15 @@
         <!-- Desktop Navigation -->
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="../index.html" class="nav-link" data-page="home">Home</a>
-          <a href="about.html" class="nav-link" data-page="about">About</a>
+          <a href="about.html" class="nav-link active" data-page="about" aria-current="page">About</a>
           <a href="services.html" class="nav-link" data-page="services">Services</a>
           <a href="career.html" class="nav-link" data-page="career">Career</a>
           <a href="../index.html#contact" class="btn btn-primary btn-sm nav-cta desktop-only">Let's Talk</a>
         </nav>
 
         <!-- Hamburger (mobile) -->
-        <button
-          class="hamburger-btn"
-          id="hamburger-btn"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-        >
+        <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-nav">
           <span class="hamburger-line" aria-hidden="true"></span>
           <span class="hamburger-line" aria-hidden="true"></span>
           <span class="hamburger-line" aria-hidden="true"></span>
@@ -75,7 +74,7 @@
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
         <div class="mobile-nav-links">
           <a href="../index.html" class="mobile-nav-link" data-page="home">Home</a>
-          <a href="about.html" class="mobile-nav-link" data-page="about">About</a>
+          <a href="about.html" class="mobile-nav-link active" data-page="about" aria-current="page">About</a>
           <a href="services.html" class="mobile-nav-link" data-page="services">Services</a>
           <a href="career.html" class="mobile-nav-link" data-page="career">Career</a>
         </div>
@@ -85,73 +84,891 @@
       </nav>
     </header>
 
-    <!-- ======== MAIN CONTENT (Preserved Foundation) ======== -->
+    <!-- ======== MAIN CONTENT ======== -->
     <main class="main-content" id="main-content">
 
-      <!-- Page Hero -->
-      <section class="page-hero">
+      <!-- ============================================
+           SECTION 1: ABOUT HERO — INTRODUCE WHO WE ARE
+           ============================================ -->
+      <section class="about-hero" id="about-hero">
+        <div class="container container-wide">
+          <div class="about-hero-grid">
+
+            <!-- Hero Left Content -->
+            <div class="about-hero-content">
+              <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                <span>ABOUT ACROTECH</span>
+              </div>
+
+              <h1 class="about-hero-title">
+                We Believe Great Technology Starts With <span class="text-highlight">Understanding People.</span>
+              </h1>
+
+              <p class="about-hero-lead">
+                At AcroTech Software Solutions, we believe software should do more than function. It should solve
+                meaningful problems, simplify complex processes, and create better experiences for the people who use
+                it. Our focus is on turning ideas and business challenges into practical, thoughtfully engineered digital
+                solutions.
+              </p>
+
+              <div class="about-hero-quote" role="note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 3h5v5"></path>
+                  <path d="M4 20L21 3"></path>
+                  <path d="M21 16v5h-5"></path>
+                  <path d="M15 15l6 6"></path>
+                  <path d="M4 4l5 5"></path>
+                </svg>
+                <span>Clear thinking. Thoughtful engineering. Technology with purpose.</span>
+              </div>
+
+              <div class="about-hero-actions">
+                <a href="#working-process" class="btn btn-primary btn-lg">
+                  Explore Our Approach
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </a>
+                <a href="services.html" class="btn btn-secondary btn-lg">
+                  Explore Our Services
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Right Visual: Purposeful System Architecture Blueprint -->
+            <div class="about-hero-visual" aria-hidden="true">
+              <div class="blueprint-window">
+                <div class="blueprint-topbar">
+                  <div class="blueprint-dots">
+                    <span class="blueprint-dot blueprint-dot-red"></span>
+                    <span class="blueprint-dot blueprint-dot-yellow"></span>
+                    <span class="blueprint-dot blueprint-dot-green"></span>
+                  </div>
+                  <span class="blueprint-title">acrotech.blueprint // core-pillars</span>
+                  <div class="blueprint-badge">
+                    <span class="blueprint-pulse"></span>
+                    <span>System Aligned</span>
+                  </div>
+                </div>
+
+                <div class="blueprint-body">
+                  <div class="modules-diagram">
+
+                    <!-- Node 1: People & Problem -->
+                    <div class="module-node">
+                      <div class="node-icon-box purple">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </div>
+                      <div class="node-content">
+                        <div class="node-header">
+                          <span class="node-name">Human Purpose &amp; Need</span>
+                          <span class="node-tag">layer_01</span>
+                        </div>
+                        <p class="node-desc">Listening deeply, understanding workflows, and addressing real human challenges.</p>
+                      </div>
+                    </div>
+
+                    <!-- Connector Line -->
+                    <div class="node-connector">
+                      <div class="node-connector-line"></div>
+                      <div class="node-connector-dot"></div>
+                    </div>
+
+                    <!-- Node 2: Thoughtful Architecture -->
+                    <div class="module-node active-pillar">
+                      <div class="node-icon-box indigo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                          <polyline points="2 17 12 22 22 17"></polyline>
+                          <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                      </div>
+                      <div class="node-content">
+                        <div class="node-header">
+                          <span class="node-name">Thoughtful Architecture</span>
+                          <span class="node-tag">layer_02</span>
+                        </div>
+                        <p class="node-desc">Selecting appropriate technologies, designing modular patterns, and planning scale.</p>
+                      </div>
+                    </div>
+
+                    <!-- Connector Line -->
+                    <div class="node-connector">
+                      <div class="node-connector-line"></div>
+                      <div class="node-connector-dot"></div>
+                    </div>
+
+                    <!-- Node 3: Sound Engineering -->
+                    <div class="module-node">
+                      <div class="node-icon-box cyan">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="16 18 22 12 16 6"></polyline>
+                          <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                      </div>
+                      <div class="node-content">
+                        <div class="node-header">
+                          <span class="node-name">Sound Engineering</span>
+                          <span class="node-tag">layer_03</span>
+                        </div>
+                        <p class="node-desc">Readable codebases, thorough testing, and maintainable production deliverables.</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Metrics Strip -->
+                  <div class="blueprint-metrics">
+                    <div class="bp-metric">
+                      <span class="bp-metric-label">Foundation</span>
+                      <span class="bp-metric-val">Empathy First</span>
+                    </div>
+                    <div class="bp-metric">
+                      <span class="bp-metric-label">Execution</span>
+                      <span class="bp-metric-val accent">Clean &amp; Tested</span>
+                    </div>
+                    <div class="bp-metric">
+                      <span class="bp-metric-label">Outcome</span>
+                      <span class="bp-metric-val">Lasting Value</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 2: OUR STORY — WHY WE EXIST
+           ============================================ -->
+      <section class="story-section" id="our-story">
         <div class="container">
-          <span class="section-label">About Us</span>
-          <h1 class="page-hero-title">Who We Are</h1>
-          <p class="page-hero-subtitle">
-            Placeholder — company introduction and story will be added in Phase 2.
+          <div class="story-grid">
+
+            <!-- Narrative Content -->
+            <div class="story-content">
+              <span class="section-label">OUR STORY</span>
+              <h2 class="section-title">Technology Has Value When It Solves a Real Problem.</h2>
+
+              <p class="story-lead">
+                Every meaningful digital solution begins with a question: what problem are we trying to solve?
+              </p>
+
+              <p class="story-body">
+                At AcroTech Software Solutions, our philosophy is rooted in this simple idea. Businesses do not need
+                technology simply because it is available. They need solutions that make their work easier, help them
+                serve people better, and support their goals.
+              </p>
+
+              <p class="story-body">
+                That is why we place understanding before implementation. We believe in looking beyond the immediate
+                feature request to understand the bigger picture, choosing an appropriate technical approach, and
+                building with usability, maintainability, and long-term value in mind.
+              </p>
+
+              <p class="story-body">
+                Our aim is to make technology more practical, accessible, and useful for the businesses and people who
+                depend on it.
+              </p>
+
+              <!-- Emphasized Statement Card -->
+              <div class="story-quote-card">
+                <p class="story-quote-text">
+                  &ldquo;Don't build technology just because you can. Build it because it makes a difference.&rdquo;
+                </p>
+                <span class="story-quote-attribution">AcroTech Core Philosophy</span>
+              </div>
+            </div>
+
+            <!-- Supporting Visual Panel: Principles Matrix -->
+            <div class="story-visual-wrap">
+              <div class="philosophy-panel">
+                <div class="panel-header-mini">
+                  <span class="panel-header-title">Our Grounding Philosophy</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+
+                <div class="panel-steps">
+                  <div class="panel-step-item">
+                    <div class="step-num-badge">01</div>
+                    <div>
+                      <h3 class="step-text-title">Listen &amp; Frame the Problem</h3>
+                      <p class="step-text-desc">Identify the actual business obstacle before deciding on code or architectural tooling.</p>
+                    </div>
+                  </div>
+
+                  <div class="panel-step-item">
+                    <div class="step-num-badge">02</div>
+                    <div>
+                      <h3 class="step-text-title">Design for Clarity</h3>
+                      <p class="step-text-desc">Prioritize intuitive navigation and transparent workflows over unnecessary complexity.</p>
+                    </div>
+                  </div>
+
+                  <div class="panel-step-item">
+                    <div class="step-num-badge">03</div>
+                    <div>
+                      <h3 class="step-text-title">Build for Durability</h3>
+                      <p class="step-text-desc">Engineer clean, scalable foundations that evolve smoothly alongside organizational growth.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 3: OUR MISSION AND VISION
+           ============================================ -->
+      <section class="purpose-section" id="mission-vision">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">OUR PURPOSE</span>
+            <h2 class="section-title">Driven by Purpose. Guided by Possibility.</h2>
+            <p class="section-subtitle">
+              Our intended direction and operating philosophy describe how we approach our craft and what we strive to create for every client.
+            </p>
+          </div>
+
+          <div class="purpose-grid">
+
+            <!-- Mission Panel -->
+            <div class="purpose-card mission-card">
+              <div>
+                <div class="purpose-card-header">
+                  <div class="purpose-icon-wrap" aria-hidden="true">
+                    <svg class="purpose-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                    </svg>
+                  </div>
+                  <span class="purpose-badge">Our Mission</span>
+                </div>
+
+                <h3 class="purpose-title">Our Mission</h3>
+                <p class="purpose-text">
+                  Our mission is to develop practical, reliable, and user-focused software solutions that help
+                  businesses address real challenges. We aim to combine thoughtful problem-solving, purposeful design,
+                  and sound engineering to make technology work better for the people who use it.
+                </p>
+              </div>
+
+              <div class="purpose-card-footer">
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Practical Problem-Solving
+                </span>
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Purposeful Design
+                </span>
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Sound Engineering
+                </span>
+              </div>
+            </div>
+
+            <!-- Vision Panel -->
+            <div class="purpose-card vision-card">
+              <div>
+                <div class="purpose-card-header">
+                  <div class="purpose-icon-wrap" aria-hidden="true">
+                    <svg class="purpose-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </div>
+                  <span class="purpose-badge">Our Vision</span>
+                </div>
+
+                <h3 class="purpose-title">Our Vision</h3>
+                <p class="purpose-text">
+                  Our vision is to contribute to a digital future where useful technology helps businesses grow,
+                  processes become simpler, and digital experiences become more accessible. We aspire to build
+                  solutions that create lasting value through clarity, quality, and continuous improvement.
+                </p>
+              </div>
+
+              <div class="purpose-card-footer">
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  Clarity &amp; Quality
+                </span>
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  Continuous Improvement
+                </span>
+                <span class="purpose-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  Accessible Digital Future
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 4: OUR CORE VALUES
+           ============================================ -->
+      <section class="values-section" id="core-values">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">WHAT GUIDES US</span>
+            <h2 class="section-title">The Principles Behind Every Good Solution.</h2>
+            <p class="section-subtitle">
+              Good software is not defined by code alone. It is shaped by the decisions, standards, and principles that
+              guide its development. These are the values we want every AcroTech project to reflect.
+            </p>
+          </div>
+
+          <div class="values-grid">
+
+            <!-- Value 1 -->
+            <div class="value-card">
+              <div class="value-card-top">
+                <span class="value-num">01</span>
+                <div class="value-icon-box" aria-hidden="true">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="value-title">Understand Before Acting</h3>
+              <p class="value-desc">
+                We believe good decisions begin with listening. Understanding the problem, the people involved, and
+                the desired outcome helps us choose a more suitable solution.
+              </p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="value-card">
+              <div class="value-card-top">
+                <span class="value-num">02</span>
+                <div class="value-icon-box" aria-hidden="true">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="value-title">Quality Over Shortcuts</h3>
+              <p class="value-desc">
+                We value careful implementation, readable code, thoughtful testing, and attention to detail. A solution
+                should be built with care, not merely rushed to completion.
+              </p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="value-card">
+              <div class="value-card-top">
+                <span class="value-num">03</span>
+                <div class="value-icon-box" aria-hidden="true">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="value-title">People-Centered Design</h3>
+              <p class="value-desc">
+                Technology should feel useful and understandable. We consider usability, accessibility, and the
+                experience of the people who will interact with the product.
+              </p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="value-card">
+              <div class="value-card-top">
+                <span class="value-num">04</span>
+                <div class="value-icon-box" aria-hidden="true">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="value-title">Transparency and Trust</h3>
+              <p class="value-desc">
+                Clear communication and honest expectations are essential to a healthy working relationship. We believe
+                in discussing requirements, limitations, progress, and changes openly.
+              </p>
+            </div>
+
+            <!-- Value 5 -->
+            <div class="value-card">
+              <div class="value-card-top">
+                <span class="value-num">05</span>
+                <div class="value-icon-box" aria-hidden="true">
+                  <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="value-title">Continuous Improvement</h3>
+              <p class="value-desc">
+                Technology evolves, and so should the way we work. We value learning, feedback, reflection, and the
+                steady improvement of our technical skills and solutions.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 5: WHAT MAKES OUR APPROACH DIFFERENT?
+           ============================================ -->
+      <section class="approach-section" id="acrotech-approach">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">THE ACROTECH APPROACH</span>
+            <h2 class="section-title">Thoughtful Decisions. Practical Solutions.</h2>
+            <p class="section-subtitle">
+              Choosing a software partner is about more than choosing someone to write code. It is about finding an
+              approach that makes sense for your goals, your users, and the future of your product.
+            </p>
+          </div>
+
+          <div class="approach-grid">
+
+            <!-- Differentiator 1 -->
+            <div class="diff-card">
+              <div class="diff-icon-column">
+                <div class="diff-icon-wrap" aria-hidden="true">
+                  <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    <line x1="12" y1="11" x2="12" y2="17"></line>
+                    <line x1="9" y1="14" x2="15" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="diff-body">
+                <span class="diff-badge">Purpose Alignment</span>
+                <h3 class="diff-title">Business-First Thinking</h3>
+                <p class="diff-desc">
+                  We focus on the purpose behind a requirement so that the solution addresses the underlying need rather
+                  than just the surface-level request.
+                </p>
+              </div>
+            </div>
+
+            <!-- Differentiator 2 -->
+            <div class="diff-card">
+              <div class="diff-icon-column">
+                <div class="diff-icon-wrap" aria-hidden="true">
+                  <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="diff-body">
+                <span class="diff-badge">Pragmatic Stack</span>
+                <h3 class="diff-title">Purposeful Technology Choices</h3>
+                <p class="diff-desc">
+                  We believe the right tools are the ones that suit the problem. Technology decisions should be guided by
+                  requirements, constraints, maintainability, and intended outcomes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Differentiator 3 -->
+            <div class="diff-card">
+              <div class="diff-icon-column">
+                <div class="diff-icon-wrap" aria-hidden="true">
+                  <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="diff-body">
+                <span class="diff-badge">Shared Expectations</span>
+                <h3 class="diff-title">Clarity Throughout the Process</h3>
+                <p class="diff-desc">
+                  We value understandable requirements, clear communication, and realistic expectations so that
+                  everyone can work toward the same goal.
+                </p>
+              </div>
+            </div>
+
+            <!-- Differentiator 4 -->
+            <div class="diff-card">
+              <div class="diff-icon-column">
+                <div class="diff-icon-wrap" aria-hidden="true">
+                  <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                    <polyline points="16 7 22 7 22 13"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="diff-body">
+                <span class="diff-badge">Sustainable Growth</span>
+                <h3 class="diff-title">Long-Term Perspective</h3>
+                <p class="diff-desc">
+                  We consider how a solution may need to evolve, making maintainability and future improvements part of
+                  the conversation from the beginning.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 6: HOW WE WORK (WORKING PROCESS)
+           ============================================ -->
+      <section class="process-section" id="working-process">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">OUR WORKING PROCESS</span>
+            <h2 class="section-title">A Clear Path From Idea to Implementation.</h2>
+            <p class="section-subtitle">
+              Every project is different, but a thoughtful process helps turn uncertainty into clear priorities and
+              achievable next steps.
+            </p>
+          </div>
+
+          <div class="process-timeline">
+
+            <!-- Stage 01 -->
+            <div class="timeline-stage">
+              <div class="stage-top">
+                <div class="stage-number-bubble" aria-hidden="true">01</div>
+              </div>
+              <div class="stage-card">
+                <h3 class="stage-title">
+                  <span class="stage-title-num">01 &mdash;</span> Discover
+                </h3>
+                <p class="stage-desc">
+                  We begin by discussing the problem, understanding the business objectives, identifying the intended
+                  users, and clarifying the requirements.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 02 -->
+            <div class="timeline-stage">
+              <div class="stage-top">
+                <div class="stage-number-bubble" aria-hidden="true">02</div>
+              </div>
+              <div class="stage-card">
+                <h3 class="stage-title">
+                  <span class="stage-title-num">02 &mdash;</span> Define and Plan
+                </h3>
+                <p class="stage-desc">
+                  We organize the requirements, identify priorities, discuss suitable technologies, and establish an
+                  agreed scope for the work.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 03 -->
+            <div class="timeline-stage">
+              <div class="stage-top">
+                <div class="stage-number-bubble" aria-hidden="true">03</div>
+              </div>
+              <div class="stage-card">
+                <h3 class="stage-title">
+                  <span class="stage-title-num">03 &mdash;</span> Design and Develop
+                </h3>
+                <p class="stage-desc">
+                  We turn the agreed requirements into a working solution, paying attention to usability,
+                  implementation quality, and maintainable code.
+                </p>
+              </div>
+            </div>
+
+            <!-- Stage 04 -->
+            <div class="timeline-stage">
+              <div class="stage-top">
+                <div class="stage-number-bubble" aria-hidden="true">04</div>
+              </div>
+              <div class="stage-card">
+                <h3 class="stage-title">
+                  <span class="stage-title-num">04 &mdash;</span> Review and Refine
+                </h3>
+                <p class="stage-desc">
+                  We evaluate the solution, test important functionality, gather feedback, and make agreed improvements
+                  before the next delivery or release.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="process-footer-note">
+            Note: While every project has distinct requirements, this sequence reflects our general delivery framework.
           </p>
         </div>
       </section>
 
-      <!-- Section: Company Introduction (placeholder) -->
-      <section class="placeholder-section" id="introduction">
+      <!-- ============================================
+           SECTION 7: WHO WE AIM TO HELP
+           ============================================ -->
+      <section class="audience-section" id="who-we-help">
         <div class="container">
           <div class="section-header-center">
-            <h2 class="section-title">Our Story</h2>
-            <p class="section-subtitle">Placeholder for the company narrative.</p>
+            <span class="section-label">BUILT AROUND YOUR NEEDS</span>
+            <h2 class="section-title">Different Challenges. Thoughtful Digital Solutions.</h2>
+            <p class="section-subtitle">
+              Technology needs vary from one business to another. Our focus is on understanding those differences and
+              exploring solutions that fit the actual problem.
+            </p>
           </div>
-          <div class="placeholder-block">
-            <p>Company introduction content will be designed in Phase 2.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- Section: Mission & Vision (placeholder) -->
-      <section class="placeholder-section" id="mission-vision">
-        <div class="container">
-          <div class="section-header-center">
-            <h2 class="section-title">Mission &amp; Vision</h2>
-            <p class="section-subtitle">Placeholder for mission and vision statements.</p>
-          </div>
-          <div class="grid grid-2 gap-6">
-            <div class="placeholder-block">
-              <p>Mission statement — Phase 2</p>
+          <div class="audience-grid">
+
+            <!-- Panel 1 -->
+            <div class="audience-card">
+              <div>
+                <div class="audience-card-header">
+                  <div class="audience-icon-wrap" aria-hidden="true">
+                    <svg class="audience-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="20" x2="12" y2="10"></line>
+                      <line x1="18" y1="20" x2="18" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                  </div>
+                  <span class="audience-tag">Scale &amp; Modernize</span>
+                  <h3 class="audience-title">Growing Businesses</h3>
+                </div>
+                <p class="audience-desc">
+                  For businesses looking to establish a stronger digital presence, improve everyday workflows, or
+                  explore new digital opportunities.
+                </p>
+              </div>
+
+              <div class="audience-pills">
+                <span class="audience-pill">Digital Presence</span>
+                <span class="audience-pill">Workflow Modernization</span>
+                <span class="audience-pill">Customer Portals</span>
+              </div>
             </div>
-            <div class="placeholder-block">
-              <p>Vision statement — Phase 2</p>
+
+            <!-- Panel 2 -->
+            <div class="audience-card">
+              <div>
+                <div class="audience-card-header">
+                  <div class="audience-icon-wrap" aria-hidden="true">
+                    <svg class="audience-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </div>
+                  <span class="audience-tag">Efficiency &amp; Flow</span>
+                  <h3 class="audience-title">Teams With Practical Challenges</h3>
+                </div>
+                <p class="audience-desc">
+                  For teams that need software to simplify repetitive work, organize information, or make existing
+                  processes easier to manage.
+                </p>
+              </div>
+
+              <div class="audience-pills">
+                <span class="audience-pill">Process Simplification</span>
+                <span class="audience-pill">Internal Tools</span>
+                <span class="audience-pill">Data Organization</span>
+              </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="audience-card">
+              <div>
+                <div class="audience-card-header">
+                  <div class="audience-icon-wrap" aria-hidden="true">
+                    <svg class="audience-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v4"></path>
+                      <path d="M12 18v4"></path>
+                      <path d="M4.93 4.93l2.83 2.83"></path>
+                      <path d="M16.24 16.24l2.83 2.83"></path>
+                      <path d="M2 12h4"></path>
+                      <path d="M18 12h4"></path>
+                      <path d="M4.93 19.07l2.83-2.83"></path>
+                      <path d="M16.24 7.76l2.83-2.83"></path>
+                    </svg>
+                  </div>
+                  <span class="audience-tag">Creation &amp; Launch</span>
+                  <h3 class="audience-title">Ideas Becoming Digital Products</h3>
+                </div>
+                <p class="audience-desc">
+                  For people and organizations looking to turn a concept into a website, mobile application, or software
+                  product.
+                </p>
+              </div>
+
+              <div class="audience-pills">
+                <span class="audience-pill">Product Prototyping</span>
+                <span class="audience-pill">Web &amp; Mobile Apps</span>
+                <span class="audience-pill">MVP Architecture</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 8: OUR COMMITMENT TO QUALITY
+           ============================================ -->
+      <section class="commitment-section" id="our-commitment">
+        <div class="container">
+          <div class="commitment-box">
+            <div class="commitment-grid">
+
+              <!-- Left Content -->
+              <div class="commitment-content">
+                <span class="section-label">OUR COMMITMENT</span>
+                <h2 class="section-title">Built With Care. Designed With Purpose.</h2>
+
+                <p class="commitment-lead">
+                  We believe trust is built through the details: understanding requirements, making informed technical
+                  decisions, communicating clearly, and paying attention to how a solution works in real situations.
+                </p>
+
+                <p class="commitment-text">
+                  Our commitment is to approach projects thoughtfully, keep the intended users in mind, and work toward
+                  software that is understandable, maintainable, and aligned with agreed requirements.
+                </p>
+
+                <p class="commitment-text">
+                  We also recognize that good software develops through feedback and improvement. We value reviewing
+                  our work, learning from challenges, and making considered changes when they add genuine value.
+                </p>
+              </div>
+
+              <!-- Right 3 Concise Principles -->
+              <div class="commitment-principles" aria-label="Commitment Pillars">
+                <div class="commitment-principle-item">
+                  <div class="cp-icon-wrap indigo" aria-hidden="true">
+                    <svg class="cp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                  </div>
+                  <div class="cp-info">
+                    <h3 class="cp-title">Clear Communication</h3>
+                    <p class="cp-desc">Honest expectations, open discussions of progress and limitations, and transparent collaboration.</p>
+                  </div>
+                </div>
+
+                <div class="commitment-principle-item">
+                  <div class="cp-icon-wrap cyan" aria-hidden="true">
+                    <svg class="cp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                  </div>
+                  <div class="cp-info">
+                    <h3 class="cp-title">Thoughtful Engineering</h3>
+                    <p class="cp-desc">Careful implementation, readable codebases, disciplined testing, and long-term maintainability.</p>
+                  </div>
+                </div>
+
+                <div class="commitment-principle-item">
+                  <div class="cp-icon-wrap purple" aria-hidden="true">
+                    <svg class="cp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                    </svg>
+                  </div>
+                  <div class="cp-info">
+                    <h3 class="cp-title">Continuous Improvement</h3>
+                    <p class="cp-desc">Listening to user feedback, learning from operational challenges, and refining solutions purposefully.</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Values (placeholder) -->
-      <section class="placeholder-section" id="values">
+      <!-- ============================================
+           SECTION 9: FINAL CALL TO ACTION
+           ============================================ -->
+      <section class="about-cta-section" id="about-cta">
         <div class="container">
-          <div class="section-header-center">
-            <h2 class="section-title">Our Values</h2>
-            <p class="section-subtitle">Placeholder for core company values.</p>
-          </div>
-          <div class="placeholder-block">
-            <p>Company values cards will be designed in Phase 2.</p>
-          </div>
-        </div>
-      </section>
+          <div class="about-cta-box">
+            <div class="about-cta-inner">
+              <span class="about-cta-eyebrow">LET'S BUILD SOMETHING MEANINGFUL</span>
+              <h2 class="about-cta-title">Your Next Idea Deserves a Thoughtful Approach.</h2>
+              <p class="about-cta-lead">
+                Have a business challenge, a product idea, or an existing digital solution that needs improvement?
+                Let's start by understanding what you want to achieve and exploring how technology could help.
+              </p>
 
-      <!-- Section: Team (placeholder) -->
-      <section class="placeholder-section" id="team">
-        <div class="container">
-          <div class="section-header-center">
-            <h2 class="section-title">Our Team</h2>
-            <p class="section-subtitle">Placeholder for team section.</p>
-          </div>
-          <div class="placeholder-block">
-            <p>Team section will be designed in Phase 2.</p>
+              <div class="about-cta-actions">
+                <a href="services.html" class="btn btn-primary btn-lg">
+                  Explore Our Services
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="../index.html#contact" class="btn btn-secondary btn-lg">
+                  Let's Talk
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,6 +980,7 @@
       <div class="footer-inner">
         <div class="footer-grid">
 
+          <!-- Brand Column -->
           <div class="footer-brand">
             <a href="../index.html" class="site-logo" aria-label="AcroTech Software Solutions — Home">
               <img src="../assets/logos/logo.png" alt="AcroTech Software Solutions" class="site-logo-img">
@@ -181,10 +999,11 @@
               <a href="#" class="footer-social-link" aria-label="LinkedIn profile placeholder" title="LinkedIn">in</a>
               <a href="#" class="footer-social-link" aria-label="Twitter / X profile placeholder" title="Twitter / X">X</a>
               <a href="#" class="footer-social-link" aria-label="GitHub profile placeholder" title="GitHub">GH</a>
-              <a href="#" class="footer-social-link" aria-label="Email placeholder" title="Email">@</a>
+              <a href="#" class="footer-social-link" aria-label="Contact placeholder" title="Email">@</a>
             </div>
           </div>
 
+          <!-- Navigation Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Navigation</h3>
             <div class="footer-links">
@@ -195,26 +1014,34 @@
             </div>
           </div>
 
+          <!-- Services Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Services</h3>
             <div class="footer-links">
-              <a href="services.html" class="footer-link">All Services</a>
+              <a href="services.html" class="footer-link">Custom Software</a>
+              <a href="services.html" class="footer-link">Web Development</a>
+              <a href="services.html" class="footer-link">Mobile Apps</a>
+              <a href="services.html" class="footer-link">UI/UX &amp; Design</a>
             </div>
           </div>
 
+          <!-- Contact Column -->
           <div class="footer-column">
             <h3 class="footer-heading">Contact</h3>
             <div class="footer-links">
               <span class="footer-link" style="color: var(--color-text-muted);">[Contact email to be provided]</span>
               <span class="footer-link" style="color: var(--color-text-muted);">[Office location to be provided]</span>
-              <a href="../index.html#contact" class="footer-link" style="color: var(--color-accent); font-weight: var(--font-medium);">Start a Discussion &rarr;</a>
+              <a href="../index.html#contact" class="footer-link"
+                style="color: var(--color-accent); font-weight: var(--font-medium);">Start a Discussion &rarr;</a>
             </div>
           </div>
 
         </div>
 
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <p class="footer-copyright">&copy; <span class="js-current-year">2026</span> AcroTech Software Solutions. All rights reserved.</p>
+          <p class="footer-copyright">&copy; <span class="js-current-year">2026</span> AcroTech Software Solutions. All
+            rights reserved.</p>
           <div class="footer-legal">
             <a href="#" class="footer-legal-link">Privacy Policy</a>
             <a href="#" class="footer-legal-link">Terms of Service</a>
@@ -225,8 +1052,10 @@
 
   </div>
 
+  <!-- Scripts -->
   <script src="../js/main.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/components.js"></script>
 </body>
+
 </html>

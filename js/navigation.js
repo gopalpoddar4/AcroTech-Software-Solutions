@@ -93,19 +93,19 @@
   // ---- Active Page Indicator ----
 
   function setActiveNavLink() {
-    // Get current page filename
-    var path = window.location.pathname;
+    // Get current page filename (normalized for file:// and web servers)
+    var path = window.location.pathname.toLowerCase().replace(/\\/g, '/');
 
     // Determine the "page key" from the URL
     var pageKey = '';
-    if (path.endsWith('/') || path.endsWith('/index.html') || path.endsWith('index.html')) {
-      pageKey = 'home';
-    } else if (path.includes('/about')) {
+    if (path.includes('about')) {
       pageKey = 'about';
-    } else if (path.includes('/services')) {
+    } else if (path.includes('services')) {
       pageKey = 'services';
-    } else if (path.includes('/career')) {
+    } else if (path.includes('career')) {
       pageKey = 'career';
+    } else {
+      pageKey = 'home';
     }
 
     // Apply active class to desktop nav
