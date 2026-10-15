@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="At AcroTech Software Solutions, we build reliable software, intuitive digital experiences, and scalable technology solutions tailored to your business.">
+  <title>AcroTech Software Solutions | Innovative Software &amp; Digital Solutions</title>
+
+  <!-- Favicon References -->
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
+  <link rel="apple-touch-icon" href="assets/logos/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- ======== HEADER ======== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="site-logo" aria-label="AcroTech Software Solutions — Home">
+          <img src="assets/logos/logo.png" alt="AcroTech Software Solutions" class="site-logo-img">
+          <span class="site-logo-fallback">
+            <span class="logo-icon" aria-hidden="true">A</span>
+            <span class="site-logo-text">
+              <span class="site-logo-name">AcroTech</span>
+              <span class="site-logo-sub">Software Solutions</span>
+            </span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-link" data-page="home">Home</a>
+          <a href="pages/about.html" class="nav-link" data-page="about">About</a>
+          <a href="pages/services.html" class="nav-link" data-page="services">Services</a>
+          <a href="pages/career.html" class="nav-link" data-page="career">Career</a>
+          <a href="#contact" class="btn btn-primary btn-sm nav-cta desktop-only">Let's Talk</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Overlay -->
+      <div class="mobile-nav-overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+
+      <!-- Mobile Navigation -->
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-link" data-page="home">Home</a>
+          <a href="pages/about.html" class="mobile-nav-link" data-page="about">About</a>
+          <a href="pages/services.html" class="mobile-nav-link" data-page="services">Services</a>
+          <a href="pages/career.html" class="mobile-nav-link" data-page="career">Career</a>
+        </div>
+        <div class="mobile-nav-cta">
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======== MAIN CONTENT ======== -->
+    <main class="main-content" id="main-content">
+
+      <!-- ============================================
+           SECTION 1: HERO SECTION
+           ============================================ -->
+      <section class="hero-section" id="hero">
+        <div class="container container-wide">
+          <div class="hero-grid">
+
+            <!-- Hero Text Content -->
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="hero-badge-dot" aria-hidden="true"></span>
+                <span>SOFTWARE. STRATEGY. SCALE.</span>
+              </div>
+
+              <h1 class="hero-title">
+                Turning Ideas Into <span class="text-highlight">Powerful Digital Solutions.</span>
+              </h1>
+
+              <p class="hero-lead">
+                At AcroTech Software Solutions, we help businesses transform ideas into reliable software, intuitive digital experiences, and scalable technology solutions. We combine thoughtful engineering with practical problem-solving to help your business move forward.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                  Let's Discuss Your Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="pages/services.html" class="btn btn-secondary btn-lg">
+                  Explore Our Services
+                </a>
+              </div>
+
+              <!-- Key Capabilities / Trust Chips -->
+              <div class="hero-chips" aria-label="Core competencies">
+                <span class="hero-chip">
+                  <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  Custom Software
+                </span>
+                <span class="hero-chip">
+                  <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  Web Applications
+                </span>
+                <span class="hero-chip">
+                  <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  Mobile Platforms
+                </span>
+                <span class="hero-chip">
+                  <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  UI/UX Architecture
+                </span>
+              </div>
+            </div>
+
+            <!-- Hero Visual: Clean System Architecture Interface -->
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-device-window">
+                <div class="window-topbar">
+                  <div class="window-dots">
+                    <span class="window-dot window-dot-red"></span>
+                    <span class="window-dot window-dot-yellow"></span>
+                    <span class="window-dot window-dot-green"></span>
+                  </div>
+                  <span class="window-title">acrotech.engine // v3.2-prod</span>
+                  <div class="window-status">
+                    <span class="window-status-pulse"></span>
+                    <span>Active System</span>
+                  </div>
+                </div>
+
+                <div class="window-body">
+                  <div class="code-block">
+                    <span class="code-line"><span class="code-keyword">package</span> <span class="code-str">solutions.acrotech.core</span>;</span>
+                    <br>
+                    <span class="code-line"><span class="code-keyword">public class</span> <span class="code-fn">EnterpriseSolution</span> <span class="code-keyword">implements</span> <span class="code-fn">DigitalPlatform</span> {</span>
+                    <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">private final</span> Strategy <span class="code-prop">strategy</span> = <span class="code-str">"Business-First"</span>;</span>
+                    <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">private final</span> Quality <span class="code-prop">standard</span> = <span class="code-str">"Rigorous"</span>;</span>
+                    <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">private final</span> Architecture <span class="code-prop">design</span> = <span class="code-str">"Scalable &amp; Resilient"</span>;</span>
+                    <br>
+                    <span class="code-line">&nbsp;&nbsp;<span class="code-keyword">public</span> SolutionState <span class="code-fn">build</span>() {</span>
+                    <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> SolutionState.<span class="code-fn">READY_FOR_GROWTH</span>;</span>
+                    <span class="code-line">&nbsp;&nbsp;}</span>
+                    <span class="code-line">}</span>
+                  </div>
+
+                  <!-- System Performance Metrics Strip -->
+                  <div class="system-metrics-grid">
+                    <div class="metric-card">
+                      <span class="metric-label">Execution</span>
+                      <span class="metric-val accent">Clean Code</span>
+                    </div>
+                    <div class="metric-card">
+                      <span class="metric-label">Architecture</span>
+                      <span class="metric-val primary">Modular</span>
+                    </div>
+                    <div class="metric-card">
+                      <span class="metric-label">Scalability</span>
+                      <span class="metric-val success">Production Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 2: CLEAR COMPANY INTRODUCTION
+           ============================================ -->
+      <section class="intro-section" id="about-intro">
+        <div class="container">
+          <div class="intro-header">
+            <span class="section-label">WHO WE ARE</span>
+            <h2 class="section-title">Technology Built Around Your Business.</h2>
+            <p class="intro-lead">
+              Technology creates the greatest value when it solves real problems. AcroTech Software Solutions focuses on understanding business needs and translating them into practical, maintainable, and dependable software. From the first idea to the final implementation, our approach is guided by clarity, quality, and a commitment to building solutions that serve a purpose.
+            </p>
+          </div>
+
+          <!-- 3 Supporting Principles -->
+          <div class="principles-grid">
+            <div class="principle-card">
+              <div class="principle-icon-wrap" aria-hidden="true">
+                <svg class="principle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h3 class="principle-title">Business-First Thinking</h3>
+              <p class="principle-desc">
+                We align engineering decisions with organizational objectives, real workflows, and practical user needs to ensure meaningful business impact.
+              </p>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-icon-wrap" aria-hidden="true">
+                <svg class="principle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="principle-title">Quality-Focused Engineering</h3>
+              <p class="principle-desc">
+                We prioritize readable, maintainable, and carefully tested codebases that reduce technical debt and deliver consistent operational stability.
+              </p>
+            </div>
+
+            <div class="principle-card">
+              <div class="principle-icon-wrap" aria-hidden="true">
+                <svg class="principle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="principle-title">Scalable Solutions</h3>
+              <p class="principle-desc">
+                We engineer flexible software structures designed to scale gracefully alongside your user base, data volumes, and evolving business scope.
+              </p>
+            </div>
+          </div>
+
+          <div class="intro-action">
+            <a href="pages/about.html" class="btn btn-secondary">
+              Learn More About Us
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 3: SERVICES OVERVIEW
+           ============================================ -->
+      <section class="services-section" id="services-overview">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">WHAT WE DO</span>
+            <h2 class="section-title">The Right Technology for Your Next Step.</h2>
+            <p class="section-subtitle">
+              Every business has different challenges. We help identify the right digital approach and build solutions that align with your goals, workflows, and future plans.
+            </p>
+          </div>
+
+          <!-- 4 Services Cards -->
+          <div class="services-grid">
+            <!-- 1. Custom Software Development -->
+            <div class="service-card">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="service-title">Custom Software Development</h3>
+              <p class="service-desc">
+                Software designed around your specific business requirements, workflows, and operational needs.
+              </p>
+              <div class="service-capabilities">
+                Backend Systems • Workflow Automation • API Integration
+              </div>
+            </div>
+
+            <!-- 2. Web Development -->
+            <div class="service-card">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3 class="service-title">Web Development</h3>
+              <p class="service-desc">
+                Responsive, user-friendly websites and web applications designed to communicate your value and support your business goals.
+              </p>
+              <div class="service-capabilities">
+                Modern Web Apps • Client Portals • High-Performance Systems
+              </div>
+            </div>
+
+            <!-- 3. Mobile App Development -->
+            <div class="service-card">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="service-title">Mobile App Development</h3>
+              <p class="service-desc">
+                Mobile experiences built to help businesses connect with customers and make digital services more accessible.
+              </p>
+              <div class="service-capabilities">
+                iOS &amp; Android • Cross-Platform Platforms • Intuitive Mobile Workflows
+              </div>
+            </div>
+
+            <!-- 4. UI/UX & Digital Product Design -->
+            <div class="service-card">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="service-title">UI/UX &amp; Digital Product Design</h3>
+              <p class="service-desc">
+                Thoughtful interfaces and user journeys that make digital products easier to understand, navigate, and use.
+              </p>
+              <div class="service-capabilities">
+                Design Systems • Interactive Wireframes • User Experience Audits
+              </div>
+            </div>
+          </div>
+
+          <div class="services-action">
+            <a href="pages/services.html" class="btn btn-primary">
+              View All Services
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 4: WHY CHOOSE ACROTECH?
+           ============================================ -->
+      <section class="why-section" id="why-acrotech">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">WHY ACROTECH</span>
+            <h2 class="section-title">More Than Code. A Better Way to Build.</h2>
+            <p class="section-subtitle">
+              Good software starts with understanding the problem. We value clear communication, thoughtful planning, reliable implementation, and solutions that remain useful as business needs evolve.
+            </p>
+          </div>
+
+          <!-- Distinctive 2x2 Architectural Grid -->
+          <div class="why-grid">
+            <!-- 01 -->
+            <div class="why-card">
+              <div class="why-card-top">
+                <span class="why-num">01</span>
+                <span class="why-badge">Analysis First</span>
+              </div>
+              <h3 class="why-title">Understand Before Building</h3>
+              <p class="why-desc">
+                We begin by understanding your objectives and requirements before deciding how to approach the solution.
+              </p>
+            </div>
+
+            <!-- 02 -->
+            <div class="why-card">
+              <div class="why-card-top">
+                <span class="why-num">02</span>
+                <span class="why-badge">Human Centered</span>
+              </div>
+              <h3 class="why-title">Purposeful Design</h3>
+              <p class="why-desc">
+                We aim to make technology clear, accessible, and intuitive for the people who use it.
+              </p>
+            </div>
+
+            <!-- 03 -->
+            <div class="why-card">
+              <div class="why-card-top">
+                <span class="why-num">03</span>
+                <span class="why-badge">Engineering Rigor</span>
+              </div>
+              <h3 class="why-title">Quality at Every Step</h3>
+              <p class="why-desc">
+                We emphasize readable code, careful implementation, testing, and attention to detail.
+              </p>
+            </div>
+
+            <!-- 04 -->
+            <div class="why-card">
+              <div class="why-card-top">
+                <span class="why-num">04</span>
+                <span class="why-badge">Long-term Vision</span>
+              </div>
+              <h3 class="why-title">Built for What Comes Next</h3>
+              <p class="why-desc">
+                We consider maintainability and future growth when shaping software solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 5: OUR APPROACH
+           ============================================ -->
+      <section class="process-section" id="how-we-work">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-label">HOW WE WORK</span>
+            <h2 class="section-title">From First Conversation to a Working Solution.</h2>
+            <p class="section-subtitle">
+              Our general approach is structured to maintain transparency, ensure alignment, and bring predictability to each phase of project delivery.
+            </p>
+          </div>
+
+          <!-- Connected Process Timeline -->
+          <div class="process-grid">
+            <!-- Step 1 -->
+            <div class="process-step">
+              <div class="step-indicator" aria-hidden="true">01</div>
+              <div class="step-content">
+                <h3 class="step-title">Discover</h3>
+                <p class="step-desc">
+                  Understand the business, its challenges, and its goals.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="process-step">
+              <div class="step-indicator" aria-hidden="true">02</div>
+              <div class="step-content">
+                <h3 class="step-title">Plan</h3>
+                <p class="step-desc">
+                  Define the scope, priorities, and suitable technical approach.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="process-step">
+              <div class="step-indicator" aria-hidden="true">03</div>
+              <div class="step-content">
+                <h3 class="step-title">Build</h3>
+                <p class="step-desc">
+                  Develop the solution with a focus on usability, quality, and maintainability.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="process-step">
+              <div class="step-indicator" aria-hidden="true">04</div>
+              <div class="step-content">
+                <h3 class="step-title">Refine</h3>
+                <p class="step-desc">
+                  Review, test, and improve the solution based on feedback and agreed requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="process-note">
+            Note: While every project has distinct requirements, this sequence reflects our general delivery framework.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================
+           SECTION 6: FINAL CALL TO ACTION
+           ============================================ -->
+      <section class="cta-section" id="contact">
+        <div class="container">
+          <div class="cta-box">
+            <div class="cta-grid">
+
+              <!-- Left CTA Content -->
+              <div class="cta-content">
+                <span class="section-label" style="margin-bottom: var(--space-2);">START A CONVERSATION</span>
+                <h2 class="cta-title">Have an Idea? Let's Build Something Meaningful.</h2>
+                <p class="cta-lead">
+                  Whether you're planning a new digital product, improving an existing system, or exploring an idea, let's start with a conversation about what you need.
+                </p>
+                <div class="cta-actions">
+                  <a href="#contact-channels" class="btn btn-primary btn-lg">
+                    Let's Talk
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Contact Channels Placeholder Card -->
+              <div class="contact-placeholder-card" id="contact-channels">
+                <div class="contact-placeholder-header">
+                  <span class="contact-placeholder-title">Direct Inquiries</span>
+                  <span class="contact-status-badge">Available</span>
+                </div>
+
+                <div class="contact-channel-item">
+                  <svg class="contact-channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <div class="contact-channel-info">
+                    <span class="contact-channel-label">Email Consultation</span>
+                    <span class="contact-channel-val">[Company email to be configured]</span>
+                  </div>
+                </div>
+
+                <div class="contact-channel-item">
+                  <svg class="contact-channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <div class="contact-channel-info">
+                    <span class="contact-channel-label">Project Discussion</span>
+                    <span class="contact-channel-val">Open for new project inquiries</span>
+                  </div>
+                </div>
+
+                <div class="contact-note">
+                  Official contact details, phone, and inquiry forms will be configured here by AcroTech Software Solutions.
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-grid">
+
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <a href="index.html" class="site-logo" aria-label="AcroTech Software Solutions — Home">
+              <img src="assets/logos/logo.png" alt="AcroTech Software Solutions" class="site-logo-img">
+              <span class="site-logo-fallback">
+                <span class="logo-icon" aria-hidden="true">A</span>
+                <span class="site-logo-text">
+                  <span class="site-logo-name">AcroTech</span>
+                  <span class="site-logo-sub">Software Solutions</span>
+                </span>
+              </span>
+            </a>
+            <p class="footer-brand-text">
+              Building practical digital solutions through thoughtful design and reliable software engineering.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link" aria-label="LinkedIn profile placeholder" title="LinkedIn">in</a>
+              <a href="#" class="footer-social-link" aria-label="Twitter / X profile placeholder" title="Twitter / X">X</a>
+              <a href="#" class="footer-social-link" aria-label="GitHub profile placeholder" title="GitHub">GH</a>
+              <a href="#" class="footer-social-link" aria-label="Contact placeholder" title="Email">@</a>
+            </div>
+          </div>
+
+          <!-- Navigation Column -->
+          <div class="footer-column">
+            <h3 class="footer-heading">Navigation</h3>
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="pages/about.html" class="footer-link">About</a>
+              <a href="pages/services.html" class="footer-link">Services</a>
+              <a href="pages/career.html" class="footer-link">Career</a>
+            </div>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer-column">
+            <h3 class="footer-heading">Services</h3>
+            <div class="footer-links">
+              <a href="pages/services.html" class="footer-link">Custom Software</a>
+              <a href="pages/services.html" class="footer-link">Web Development</a>
+              <a href="pages/services.html" class="footer-link">Mobile Apps</a>
+              <a href="pages/services.html" class="footer-link">UI/UX &amp; Design</a>
+            </div>
+          </div>
+
+          <!-- Contact Column -->
+          <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <div class="footer-links">
+              <span class="footer-link" style="color: var(--color-text-muted);">[Contact email to be provided]</span>
+              <span class="footer-link" style="color: var(--color-text-muted);">[Office location to be provided]</span>
+              <a href="#contact" class="footer-link" style="color: var(--color-accent); font-weight: var(--font-medium);">Start a Discussion &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; <span class="js-current-year">2026</span> AcroTech Software Solutions. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#" class="footer-legal-link">Privacy Policy</a>
+            <a href="#" class="footer-legal-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/components.js"></script>
+</body>
+
+</html>
