@@ -1,4 +1,4 @@
-# AcroTech Software Solutions — Company Website
+# IT World — Company Website
 
 A professional, modern IT company website built with vanilla HTML5, CSS3, and JavaScript — no frameworks, no build tools. Fully compatible with GitHub Pages.
 
@@ -49,8 +49,8 @@ assets/logos/logo.png
 The website is pre-configured to detect this file:
 - **Header:** Automatically displays the logo image in the sticky navbar.
 - **Footer:** Displays the logo image in the brand footer column.
-- **Favicon:** References `assets/logos/logo.png` across all 4 pages.
-- **Graceful Fallback:** While the image file is not present, an elegant typography brand badge ("AcroTech Software Solutions") is seamlessly displayed with no broken image icons or layout shift.
+- **Favicon:** References `assets/logos/favicon.png` across all 4 pages.
+- **Graceful Fallback:** While the image file is not present, an elegant typography brand badge ("IT World") is seamlessly displayed with no broken image icons or layout shift.
 
 ## Running Locally
 
@@ -98,10 +98,10 @@ The visual design is driven by CSS custom properties defined in [`css/variables.
 ## Development Phases
 
 - ✅ **Phase 1 — Structural Foundation:** Folder architecture, CSS design system, responsive navigation, footer, accessible mobile menu.
-- ✅ **Phase 2 — Finalize Home Page:** Hero section with system architecture visual, Who We Are intro with 3 principles, What We Do with 4 service cards, Why AcroTech with distinctive 2x2 architectural layout, How We Work 4-step process timeline, prominent Final CTA with direct contact placeholders, and unified browser tab branding & favicon across all 4 pages.
+- ✅ **Phase 2 — Finalize Home Page:** Hero section with system architecture visual, Who We Are intro with 3 principles, What We Do with 4 service cards, Why IT World with distinctive 2x2 architectural layout, How We Work 4-step process timeline, prominent Final CTA with direct contact placeholders, and unified browser tab branding & favicon across all 4 pages.
 - ⏳ **Phase 3 — About & Services Pages:** Detailed design of company story and full service offerings.
 - ⏳ **Phase 4 — Career Page:** Detailed career planning, opportunities, and recruitment interface.
 
 ## License
 
-All rights reserved. AcroTech Software Solutions.
+All rights reserved. IT World.
