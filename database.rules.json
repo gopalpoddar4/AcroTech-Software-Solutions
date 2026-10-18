@@ -1,25 +1,13 @@
 {
   "rules": {
-    /* 
-      IT World — Firebase Realtime Database Security Rules (Demo Configuration)
-      Allows:
-      1. Public visitors to submit new internship applications (status: pending).
-      2. Public client to listen to internshipApplications in real time so that
-         when the administrator manually sets status: "approved" in the Firebase
-         Console, the applicant automatically appears under "Our Interns".
-    */
-
     ".read": false,
     ".write": false,
-
     "internshipApplications": {
       // Allows public client-side real-time listener for the "Our Interns" showcase
       ".read": true,
-      
       "$applicationId": {
         // Public applicants can create new applications (cannot overwrite or delete existing)
         ".write": "!data.exists() && newData.exists()",
-        
         // Validates required fields on submission
         ".validate": "newData.hasChildren(['applicationId', 'fullName', 'email', 'mobileNumber', 'interestedRole', 'collegeName', 'degree', 'studyYear', 'skills', 'introduction', 'status', 'submittedAt']) && " +
                      "newData.child('fullName').isString() && newData.child('fullName').val().length > 1 && newData.child('fullName').val().length <= 100 && " +

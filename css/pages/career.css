@@ -484,8 +484,17 @@
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
 }
 
 .deadline-label {
@@ -792,7 +801,9 @@ select.form-control {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Success Card Inside Modal */
@@ -1060,50 +1071,6 @@ select.form-control {
   background: var(--color-success);
 }
 
-/* Loading Skeletons */
-.interns-loading-wrap {
-  display: flex;
-  gap: var(--space-6);
-  overflow-x: hidden;
-}
-
-.skeleton-card {
-  flex: 0 0 280px;
-  background: var(--color-dark-card);
-  border: 1px solid var(--color-border-dark);
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skeleton-avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  margin-bottom: var(--space-4);
-  animation: skeleton-shimmer 1.5s infinite;
-}
-
-.skeleton-line {
-  height: 14px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.05);
-  margin-bottom: var(--space-2);
-  animation: skeleton-shimmer 1.5s infinite;
-}
-
-.skeleton-line-title { width: 140px; height: 18px; }
-.skeleton-line-sub   { width: 100px; }
-.skeleton-line-badge { width: 80px; height: 20px; border-radius: var(--radius-full); margin-top: var(--space-2); }
-
-@keyframes skeleton-shimmer {
-  0% { opacity: 0.3; }
-  50% { opacity: 0.7; }
-  100% { opacity: 0.3; }
-}
 
 /* Empty State Card */
 .interns-empty-card {
@@ -1209,8 +1176,7 @@ select.form-control {
     padding: var(--space-4) var(--space-5);
   }
 
-  .intern-card,
-  .skeleton-card {
+  .intern-card {
     flex: 0 0 240px;
   }
 }
