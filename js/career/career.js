@@ -90,7 +90,6 @@ import { JOB_OPENINGS } from './jobs-data.js';
           <div class="job-card-header">
             <div class="job-card-header-top">
               <span class="job-dept-badge">${escapeHtml(job.department)}</span>
-              ${job.isSample ? `<span class="sample-badge">${escapeHtml(job.sampleBadge || 'Sample Opening')}</span>` : ''}
             </div>
             <h3 class="job-title">${escapeHtml(job.title)}</h3>
             <div class="job-meta-grid">
@@ -168,27 +167,10 @@ import { JOB_OPENINGS } from './jobs-data.js';
     const applyButtons = jobsContainer.querySelectorAll('.btn-apply-job');
     applyButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        const jobTitle = this.getAttribute('data-job-title') || 'this position';
-        showJobNoticeModal(jobTitle);
+        const jobTitle = this.getAttribute('data-job-title') || 'Full-Time Position';
+        openJobApplicationModal(jobTitle);
       });
     });
-  }
-
-  // Informational modal for Job Openings (distinct from Internship application)
-  function showJobNoticeModal(jobTitle) {
-    const noticeModal = document.getElementById('job-notice-modal');
-    const noticeTitle = document.getElementById('job-notice-title');
-    const noticeDesc = document.getElementById('job-notice-desc');
-    if (!noticeModal) return;
-
-    if (noticeTitle) {
-      noticeTitle.textContent = `${jobTitle} — Application Status`;
-    }
-    if (noticeDesc) {
-      noticeDesc.textContent = "Applications for this position will be available soon.";
-    }
-
-    openModal(noticeModal);
   }
 
   // =========================================================================
@@ -271,6 +253,21 @@ import { JOB_OPENINGS } from './jobs-data.js';
   let activeModal = null;
   let previousFocusedElement = null;
 
+  function resetInternshipSubmitButton() {
+    const submitBtn = document.getElementById('internship-submit-btn');
+    if (!submitBtn) return;
+    submitBtn.disabled = false;
+    submitBtn.removeAttribute('disabled');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+    if (btnText) btnText.textContent = 'Submit Application';
+    if (btnSpinner) {
+      btnSpinner.hidden = true;
+      btnSpinner.setAttribute('hidden', '');
+      btnSpinner.style.display = 'none';
+    }
+  }
+
   function openModal(modalEl) {
     if (!modalEl) return;
     activeModal = modalEl;
@@ -293,6 +290,12 @@ import { JOB_OPENINGS } from './jobs-data.js';
     modalEl.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 
+    if (modalEl.id === 'internship-modal') {
+      resetInternshipSubmitButton();
+    } else if (modalEl.id === 'job-application-modal') {
+      resetJobSubmitButton();
+    }
+
     if (previousFocusedElement && typeof previousFocusedElement.focus === 'function') {
       previousFocusedElement.focus();
     }
@@ -310,6 +313,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
           // If deadline expired, do not open application form
           return;
         }
+        resetInternshipSubmitButton();
         openModal(internshipModal);
       });
     }
@@ -417,6 +421,8 @@ import { JOB_OPENINGS } from './jobs-data.js';
     const form = document.getElementById('internship-application-form');
     if (!form) return;
 
+    resetInternshipSubmitButton();
+
     const inputs = form.querySelectorAll('input, select, textarea');
 
     // Real-time blur validation
@@ -476,17 +482,30 @@ import { JOB_OPENINGS } from './jobs-data.js';
       };
 
       const submitBtn = document.getElementById('internship-submit-btn');
-      const btnText = submitBtn.querySelector('.btn-text');
-      const btnSpinner = submitBtn.querySelector('.btn-spinner');
+      const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+      const btnSpinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
 
       // Prevent accidental duplicate submissions
-      submitBtn.disabled = true;
+      if (submitBtn) submitBtn.disabled = true;
       if (btnText) btnText.textContent = 'Submitting Application...';
-      if (btnSpinner) btnSpinner.hidden = false;
+      if (btnSpinner) {
+        btnSpinner.hidden = false;
+        btnSpinner.removeAttribute('hidden');
+        btnSpinner.style.display = 'inline-block';
+      }
       clearFormAlert();
 
       try {
-        const submissionResult = await submitInternshipApplication(formData);
+        const timeoutPromise = new Promise(function (_, reject) {
+          setTimeout(function () {
+            reject(new Error('Network request timed out. Please check your connection.'));
+          }, 15000);
+        });
+
+        const submissionResult = await Promise.race([
+          submitInternshipApplication(formData),
+          timeoutPromise
+        ]);
 
         if (submissionResult.success) {
           // Show persistent success card
@@ -503,9 +522,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
           'error'
         );
       } finally {
-        submitBtn.disabled = false;
-        if (btnText) btnText.textContent = 'Submit Application';
-        if (btnSpinner) btnSpinner.hidden = true;
+        resetInternshipSubmitButton();
       }
     });
   }
@@ -555,6 +572,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
         if (formContainer) formContainer.hidden = false;
         if (successContainer) successContainer.hidden = true;
         clearFormAlert();
+        resetInternshipSubmitButton();
       }, 300);
     });
   }
@@ -608,8 +626,14 @@ import { JOB_OPENINGS } from './jobs-data.js';
         submittedAt: dbServerTimestamp ? dbServerTimestamp() : new Date().toISOString()
       };
 
-      // 3. Write to database using set()
-      await dbSet(newAppRef, payload);
+      // 3. Write to database using set() with timeout protection
+      const writePromise = dbSet(newAppRef, payload);
+      const timeoutPromise = new Promise(function (_, reject) {
+        setTimeout(function () {
+          reject(new Error('Firebase Realtime Database write timed out.'));
+        }, 12000);
+      });
+      await Promise.race([writePromise, timeoutPromise]);
 
       return {
         success: true,
@@ -621,6 +645,213 @@ import { JOB_OPENINGS } from './jobs-data.js';
         success: false,
         message: 'Submission failed while writing to the database. Please verify Realtime Database Security Rules and try again. Your information has been preserved.'
       };
+    }
+  }
+
+  // =========================================================================
+  // 5. FULL-TIME JOB APPLICATION MODAL (Demo Only - Zero Network/Storage)
+  // =========================================================================
+
+  function resetJobSubmitButton() {
+    const submitBtn = document.getElementById('job-submit-btn');
+    if (!submitBtn) return;
+    submitBtn.disabled = false;
+    submitBtn.removeAttribute('disabled');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+    if (btnText) btnText.textContent = 'Submit Application';
+    if (btnSpinner) {
+      btnSpinner.hidden = true;
+      btnSpinner.setAttribute('hidden', '');
+      btnSpinner.style.display = 'none';
+    }
+  }
+
+  function clearJobFormAlert() {
+    const alertBox = document.getElementById('job-form-alert');
+    if (!alertBox) return;
+    alertBox.hidden = true;
+    alertBox.textContent = '';
+  }
+
+  function displayJobFormAlert(message, type) {
+    const alertBox = document.getElementById('job-form-alert');
+    if (!alertBox) return;
+    alertBox.className = `form-alert form-alert-${type}`;
+    alertBox.textContent = message;
+    alertBox.hidden = false;
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetJobFormErrors() {
+    const form = document.getElementById('job-application-form');
+    if (!form) return;
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(function (input) {
+      input.classList.remove('is-invalid');
+      input.removeAttribute('aria-invalid');
+    });
+    const errorSpans = form.querySelectorAll('.field-error');
+    errorSpans.forEach(function (span) {
+      span.textContent = '';
+      span.hidden = true;
+    });
+  }
+
+  function openJobApplicationModal(jobTitle) {
+    const modalEl = document.getElementById('job-application-modal');
+    if (!modalEl) return;
+
+    const applyingForInput = document.getElementById('job-field-applyingFor');
+    if (applyingForInput) {
+      applyingForInput.value = jobTitle || '';
+    }
+
+    const formContainer = document.getElementById('job-modal-form-container');
+    const successContainer = document.getElementById('job-modal-success-container');
+    if (formContainer) formContainer.hidden = false;
+    if (successContainer) successContainer.hidden = true;
+
+    clearJobFormAlert();
+    resetJobFormErrors();
+    resetJobSubmitButton();
+
+    openModal(modalEl);
+  }
+
+  function validateJobField(fieldEl) {
+    const name = fieldEl.name;
+    const value = fieldEl.value.trim();
+    const errorEl = document.getElementById(`error-job-${name}`);
+    let errorMessage = '';
+
+    if (fieldEl.hasAttribute('required') && !value) {
+      errorMessage = 'This field is required.';
+    } else if (name === 'email' && value) {
+      const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (!emailRegex.test(value)) {
+        errorMessage = 'Please enter a valid email address (e.g., name@example.com).';
+      }
+    } else if (name === 'mobileNumber' && value) {
+      const cleaned = value.replace(/[\s-]/g, '');
+      const indianPhoneRegex = /^(?:\+?91|0)?[6-9]\d{9}$/;
+      if (!indianPhoneRegex.test(cleaned)) {
+        errorMessage = 'Please enter a valid 10-digit Indian mobile number (e.g. 9876543210).';
+      }
+    } else if (name === 'coverLetter' && value && value.length < 15) {
+      errorMessage = 'Please provide a brief cover letter (at least 15 characters).';
+    } else if ((name === 'linkedinUrl' || name === 'githubUrl' || name === 'resumeUrl') && value) {
+      try {
+        const url = new URL(value);
+        if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+          errorMessage = 'URL must begin with http:// or https://';
+        }
+      } catch (_) {
+        errorMessage = 'Please enter a valid URL (e.g. https://...).';
+      }
+    }
+
+    if (errorMessage) {
+      fieldEl.classList.add('is-invalid');
+      fieldEl.setAttribute('aria-invalid', 'true');
+      if (errorEl) {
+        errorEl.textContent = errorMessage;
+        errorEl.hidden = false;
+      }
+      return false;
+    } else {
+      fieldEl.classList.remove('is-invalid');
+      fieldEl.removeAttribute('aria-invalid');
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.hidden = true;
+      }
+      return true;
+    }
+  }
+
+  function initJobApplicationForm() {
+    const form = document.getElementById('job-application-form');
+    if (!form) return;
+
+    resetJobSubmitButton();
+
+    const inputs = form.querySelectorAll('input:not([readonly]), textarea');
+    inputs.forEach(function (input) {
+      input.addEventListener('blur', function () {
+        if (this.value.trim() !== '') {
+          validateJobField(this);
+        }
+      });
+      input.addEventListener('input', function () {
+        if (this.classList.contains('is-invalid')) {
+          validateJobField(this);
+        }
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+      let firstInvalid = null;
+
+      inputs.forEach(function (input) {
+        const fieldValid = validateJobField(input);
+        if (!fieldValid && !firstInvalid) {
+          firstInvalid = input;
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        if (firstInvalid) firstInvalid.focus();
+        displayJobFormAlert('Please resolve the highlighted errors before submitting.', 'error');
+        return;
+      }
+
+      // Prevent repeated submission
+      const submitBtn = document.getElementById('job-submit-btn');
+      const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+      const btnSpinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (btnText) btnText.textContent = 'Submitting Application...';
+      if (btnSpinner) {
+        btnSpinner.hidden = false;
+        btnSpinner.removeAttribute('hidden');
+        btnSpinner.style.display = 'inline-block';
+      }
+      clearJobFormAlert();
+
+      // Pure frontend simulation - absolutely NO network calls, NO Firebase, NO storage
+      setTimeout(function () {
+        const formContainer = document.getElementById('job-modal-form-container');
+        const successContainer = document.getElementById('job-modal-success-container');
+
+        if (formContainer) formContainer.hidden = true;
+        if (successContainer) successContainer.hidden = false;
+
+        form.reset();
+        resetJobSubmitButton();
+      }, 400);
+    });
+
+    const successCloseBtn = document.getElementById('btn-job-success-close');
+    if (successCloseBtn) {
+      successCloseBtn.addEventListener('click', function () {
+        const modal = document.getElementById('job-application-modal');
+        if (modal) closeModal(modal);
+
+        setTimeout(function () {
+          const formContainer = document.getElementById('job-modal-form-container');
+          const successContainer = document.getElementById('job-modal-success-container');
+          if (formContainer) formContainer.hidden = false;
+          if (successContainer) successContainer.hidden = true;
+          clearJobFormAlert();
+          resetJobFormErrors();
+        }, 300);
+      });
     }
   }
 
@@ -860,6 +1091,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
     setInterval(evaluateDeadline, 60000);
     initModalHandlers();
     initFormValidationAndSubmission();
+    initJobApplicationForm();
     initInternsShowcase();
     initCarouselControls();
   }

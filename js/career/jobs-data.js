@@ -3,9 +3,6 @@
  * 
  * Centralized repository for full-time job listings on the Career page.
  * Company HR and administrators can update or add positions here.
- * 
- * NOTE: The current listings are sample openings for the initial design demonstration.
- * Each listing includes a "Sample Opening" badge as required until verified details are provided.
  */
 
 export const JOB_OPENINGS = [
@@ -15,11 +12,9 @@ export const JOB_OPENINGS = [
     department: "Software Development",
     employmentType: "Full-Time",
     experience: "Fresher / Entry-Level",
-    location: "Bengaluru, Karnataka (Sample Location)",
-    salary: "₹3,00,000 – ₹4,50,000 per annum (Sample Salary)",
+    location: "Gamharia, Jamshedpur, Jharkhand",
+    salary: "₹10,000 – ₹15,000 per month",
     workMode: "Hybrid",
-    isSample: true,
-    sampleBadge: "Sample Opening",
     description: "We are looking for a motivated .NET Developer who is interested in building reliable software applications, writing maintainable code, and learning modern development practices.",
     responsibilities: [
       "Develop and maintain applications using the .NET ecosystem.",
@@ -42,11 +37,9 @@ export const JOB_OPENINGS = [
     department: "Frontend Development",
     employmentType: "Full-Time",
     experience: "Fresher / Entry-Level",
-    location: "Kolkata, West Bengal (Sample Location)",
-    salary: "₹2,40,000 – ₹4,00,000 per annum (Sample Salary)",
+    location: "Gamharia, Jamshedpur, Jharkhand",
+    salary: "₹10,000 – ₹15,000 per month",
     workMode: "Hybrid",
-    isSample: true,
-    sampleBadge: "Sample Opening",
     description: "We are looking for a motivated React Developer who enjoys building responsive user interfaces and creating smooth, user-friendly web experiences.",
     responsibilities: [
       "Develop responsive interfaces using React.",

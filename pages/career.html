@@ -155,15 +155,6 @@
               Explore opportunities to work with IT World, build your skills, and contribute to real-world software
               projects.
             </p>
-            <div class="sample-notice-banner" role="note">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-              </svg>
-              <span>Sample Openings — Displayed for initial design demonstration purposes.</span>
-            </div>
           </div>
 
           <!-- Centralized JavaScript-populated Jobs Grid -->
@@ -545,16 +536,18 @@
       </div>
     </div>
 
-    <!-- ======== JOB NOTICE MODAL (Apply Now for Full-Time Roles) ======== -->
-    <div class="modal-backdrop" id="job-notice-modal" role="dialog" aria-modal="true" aria-labelledby="job-notice-title"
+    <!-- ======== FULL-TIME JOB APPLICATION MODAL (Demo Only) ======== -->
+    <div class="modal-backdrop" id="job-application-modal" role="dialog" aria-modal="true" aria-labelledby="job-modal-title"
       aria-hidden="true">
-      <div class="modal-container" style="max-width: 480px;">
+      <div class="modal-container">
+
+        <!-- Modal Header -->
         <div class="modal-header">
           <div class="modal-header-content">
-            <span class="modal-eyebrow">Full-Time Opening</span>
-            <h2 class="modal-title" id="job-notice-title">Application Notice</h2>
+            <span class="modal-eyebrow">Full-Time Career Opportunity</span>
+            <h2 class="modal-title" id="job-modal-title">Job Application</h2>
           </div>
-          <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">
+          <button type="button" class="modal-close-btn" data-close-modal aria-label="Close application dialog">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -562,26 +555,171 @@
             </svg>
           </button>
         </div>
-        <div class="modal-body job-notice-box">
-          <div class="job-notice-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+
+        <!-- Modal Body: Form View -->
+        <div class="modal-body" id="job-modal-form-container">
+          <div class="form-alert" id="job-form-alert" role="alert" hidden></div>
+
+          <form id="job-application-form" novalidate>
+            <div class="form-grid">
+
+              <!-- Applying For (Auto-populated from selected job) -->
+              <div class="form-group form-group-full">
+                <label for="job-field-applyingFor" class="form-label">
+                  <span>Applying For <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="text" id="job-field-applyingFor" name="applyingFor" class="form-control" readonly required
+                  aria-describedby="error-job-applyingFor" style="background: rgba(255, 255, 255, 0.03); cursor: not-allowed; font-weight: var(--font-semibold); color: var(--color-accent);">
+                <span class="field-error" id="error-job-applyingFor" role="alert" hidden></span>
+              </div>
+
+              <!-- 1. Full Name -->
+              <div class="form-group">
+                <label for="job-field-fullName" class="form-label">
+                  <span>Full Name <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="text" id="job-field-fullName" name="fullName" class="form-control"
+                  placeholder="e.g. Rahul Sharma" required aria-describedby="error-job-fullName">
+                <span class="field-error" id="error-job-fullName" role="alert" hidden></span>
+              </div>
+
+              <!-- 2. Email Address -->
+              <div class="form-group">
+                <label for="job-field-email" class="form-label">
+                  <span>Email Address <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="email" id="job-field-email" name="email" class="form-control"
+                  placeholder="e.g. rahul.sharma@example.com" required aria-describedby="error-job-email">
+                <span class="field-error" id="error-job-email" role="alert" hidden></span>
+              </div>
+
+              <!-- 3. Mobile Number -->
+              <div class="form-group">
+                <label for="job-field-mobileNumber" class="form-label">
+                  <span>Mobile Number <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="tel" id="job-field-mobileNumber" name="mobileNumber" class="form-control"
+                  placeholder="e.g. 9876543210" required aria-describedby="error-job-mobileNumber">
+                <span class="field-hint">10-digit Indian mobile number</span>
+                <span class="field-error" id="error-job-mobileNumber" role="alert" hidden></span>
+              </div>
+
+              <!-- 4. Current Location -->
+              <div class="form-group">
+                <label for="job-field-location" class="form-label">
+                  <span>Current Location <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="text" id="job-field-location" name="location" class="form-control"
+                  placeholder="e.g. Jamshedpur, Ranchi, Kolkata" required aria-describedby="error-job-location">
+                <span class="field-error" id="error-job-location" role="alert" hidden></span>
+              </div>
+
+              <!-- 5. Highest Qualification -->
+              <div class="form-group">
+                <label for="job-field-qualification" class="form-label">
+                  <span>Highest Qualification <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="text" id="job-field-qualification" name="qualification" class="form-control"
+                  placeholder="e.g. B.Tech CS, BCA, MCA, B.Sc IT" required aria-describedby="error-job-qualification">
+                <span class="field-error" id="error-job-qualification" role="alert" hidden></span>
+              </div>
+
+              <!-- 6. Relevant Skills -->
+              <div class="form-group">
+                <label for="job-field-skills" class="form-label">
+                  <span>Relevant Skills <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <input type="text" id="job-field-skills" name="skills" class="form-control"
+                  placeholder="e.g. C#, .NET, SQL, or React, JavaScript, HTML5" required aria-describedby="error-job-skills">
+                <span class="field-error" id="error-job-skills" role="alert" hidden></span>
+              </div>
+
+              <!-- 7. Short Cover Letter / Why suitable -->
+              <div class="form-group form-group-full">
+                <label for="job-field-coverLetter" class="form-label">
+                  <span>Why are you suitable for this role? <span class="req-star" aria-hidden="true">*</span></span>
+                </label>
+                <textarea id="job-field-coverLetter" name="coverLetter" class="form-control" rows="3"
+                  placeholder="Briefly describe your experience, relevant projects, and why you are interested in this position..."
+                  required aria-describedby="error-job-coverLetter"></textarea>
+                <span class="field-error" id="error-job-coverLetter" role="alert" hidden></span>
+              </div>
+
+              <!-- 8. LinkedIn Profile URL (Optional) -->
+              <div class="form-group">
+                <label for="job-field-linkedinUrl" class="form-label">
+                  <span>LinkedIn Profile URL</span>
+                  <span class="optional-tag">Optional</span>
+                </label>
+                <input type="url" id="job-field-linkedinUrl" name="linkedinUrl" class="form-control"
+                  placeholder="https://linkedin.com/in/username" aria-describedby="error-job-linkedinUrl">
+                <span class="field-error" id="error-job-linkedinUrl" role="alert" hidden></span>
+              </div>
+
+              <!-- 9. GitHub Profile URL (Optional) -->
+              <div class="form-group">
+                <label for="job-field-githubUrl" class="form-label">
+                  <span>GitHub Profile URL</span>
+                  <span class="optional-tag">Optional</span>
+                </label>
+                <input type="url" id="job-field-githubUrl" name="githubUrl" class="form-control"
+                  placeholder="https://github.com/username" aria-describedby="error-job-githubUrl">
+                <span class="field-error" id="error-job-githubUrl" role="alert" hidden></span>
+              </div>
+
+              <!-- 10. Resume URL (Optional) -->
+              <div class="form-group form-group-full">
+                <label for="job-field-resumeUrl" class="form-label">
+                  <span>Resume URL (Portfolio / Drive / Cloud link)</span>
+                  <span class="optional-tag">Optional</span>
+                </label>
+                <input type="url" id="job-field-resumeUrl" name="resumeUrl" class="form-control"
+                  placeholder="https://drive.google.com/... or https://yourportfolio.com/resume"
+                  aria-describedby="error-job-resumeUrl">
+                <span class="field-hint">Public link to your resume or portfolio. No file upload required.</span>
+                <span class="field-error" id="error-job-resumeUrl" role="alert" hidden></span>
+              </div>
+
+            </div>
+
+            <!-- Demo Form Notice -->
+            <div class="form-privacy-note">
+              <strong>Notice:</strong> Demo form: your information will not be transmitted or stored.
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+              <button type="submit" class="btn btn-primary" id="job-submit-btn">
+                <span class="btn-text">Submit Application</span>
+                <span class="btn-spinner" hidden aria-hidden="true" style="display: none;"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal Body: Success State View -->
+        <div class="modal-body modal-success-card" id="job-modal-success-container" hidden>
+          <div class="success-icon-wrap" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </div>
-          <p class="job-notice-desc" id="job-notice-desc">
-            Applications for this position will be available soon.
+          <h3 class="success-title">Application Submitted!</h3>
+          <p class="success-message">
+            Application submitted successfully! Thank you for your interest in joining IT World.
           </p>
-          <div class="job-notice-info-banner">
-            This opening is a sample listing for initial demonstration. Official recruitment for this position will open
-            in an upcoming hiring cycle.
+          <div class="form-privacy-note" style="max-width: 440px; margin: 0 auto var(--space-6); text-align: center;">
+            Demo submission: this confirmation is simulated. No application data was transmitted or stored.
           </div>
-          <button type="button" class="btn btn-primary" data-close-modal style="width: 100%;">
-            Understood
-          </button>
+          <div>
+            <button type="button" class="btn btn-primary" id="btn-job-success-close">
+              Close
+            </button>
+          </div>
         </div>
+
       </div>
     </div>
 
