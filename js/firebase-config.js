@@ -19,13 +19,14 @@
 
 // Replace these placeholders with your actual Firebase project settings
 export const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "it-world-careers.firebaseapp.com",
-  databaseURL: "https://it-world-careers-default-rtdb.firebaseio.com",
-  projectId: "it-world-careers",
-  storageBucket: "it-world-careers.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDqtxuOmqdsBaFa638ccSwMRdbEh-KA6a0",
+  authDomain: "it-world-d8834.firebaseapp.com",
+  databaseURL: "https://it-world-d8834-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "it-world-d8834",
+  storageBucket: "it-world-d8834.firebasestorage.app",
+  messagingSenderId: "1093283043023",
+  appId: "1:1093283043023:web:6ac3174a3b392adf5689ba",
+  measurementId: "G-HDZ20W6DJM"
 };
 
 /**
