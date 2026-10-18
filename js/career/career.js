@@ -660,54 +660,27 @@ import { JOB_OPENINGS } from './jobs-data.js';
     }
 
     try {
-      // Prefer publicProfiles path for clean public separation; fallback to interns path
-      const profilesRef = dbRef(database, 'publicProfiles');
-      internsListenerRef = profilesRef;
+      // Listen directly to internshipApplications so that changing status to 'approved'
+      // in the Firebase Console instantly reflects in "Our Interns" in real time without refreshing.
+      const applicationsRef = dbRef(database, 'internshipApplications');
+      internsListenerRef = applicationsRef;
 
-      dbOnValue(profilesRef, function (snapshot) {
+      dbOnValue(applicationsRef, function (snapshot) {
         if (!snapshot.exists()) {
-          // If publicProfiles does not exist, attempt fallback to interns
-          fetchFallbackInterns(function (fallbackData) {
-            handleInternsData(fallbackData, showState, trackEl);
-          });
+          showState('empty');
           return;
         }
 
         const data = snapshot.val();
         handleInternsData(data, showState, trackEl);
       }, function (error) {
-        console.warn('Realtime Database listener error:', error);
-        // If publicProfiles has permission or path issue, try interns
-        fetchFallbackInterns(function (fallbackData) {
-          handleInternsData(fallbackData, showState, trackEl);
-        });
+        console.warn('Realtime Database internshipApplications listener error:', error);
+        showState('error');
       });
 
     } catch (err) {
       console.error('Error attaching intern listener:', err);
       showState('error');
-    }
-  }
-
-  function fetchFallbackInterns(callback) {
-    if (!database) {
-      callback(null);
-      return;
-    }
-    try {
-      const internsRef = dbRef(database, 'interns');
-      dbOnValue(internsRef, function (snapshot) {
-        if (snapshot.exists()) {
-          callback(snapshot.val());
-        } else {
-          callback(null);
-        }
-      }, function (err) {
-        console.warn('Fallback interns fetch error:', err);
-        callback(null);
-      }, { onlyOnce: true });
-    } catch (_) {
-      callback(null);
     }
   }
 
@@ -717,28 +690,33 @@ import { JOB_OPENINGS } from './jobs-data.js';
       return;
     }
 
-    // Extract records and filter by profileVisible and active status
-    const publicInterns = [];
+    // Extract records and filter by approved status
+    // pending -> hidden, rejected -> hidden, approved -> visible
+    const approvedInterns = [];
     Object.keys(dataObj).forEach(function (key) {
-      const intern = dataObj[key];
-      // STRICT PUBLIC DISPLAY RULES:
-      // Only display interns where profileVisible is explicitly true and status is 'active'
-      if (intern && intern.profileVisible === true && (intern.status === 'active' || !intern.status)) {
-        publicInterns.push({
-          fullName: intern.fullName || 'IT World Intern',
-          role: intern.role || 'Engineering Intern',
-          imageUrl: intern.imageUrl || ''
+      const app = dataObj[key];
+      if (!app) return;
+
+      const status = String(app.status || '').toLowerCase().trim();
+
+      if (status === 'approved') {
+        approvedInterns.push({
+          id: key,
+          fullName: app.fullName || 'IT World Intern',
+          role: app.interestedRole || app.role || 'Engineering Intern',
+          imageUrl: (app.imageUrl && typeof app.imageUrl === 'string' && app.imageUrl.trim()) ? app.imageUrl.trim() : ''
         });
       }
     });
 
-    if (publicInterns.length === 0) {
+    if (approvedInterns.length === 0) {
       showState('empty');
       return;
     }
 
-    // Render cards safely without exposing any internal IDs, emails, or credentials
-    trackEl.innerHTML = publicInterns.map(function (intern) {
+    // Render cards safely: only public display fields (fullName, interestedRole, imageUrl)
+    // Never exposes private applicant fields (email, mobile number, college, introduction, etc.)
+    trackEl.innerHTML = approvedInterns.map(function (intern) {
       const initials = getInitials(intern.fullName);
       const safeName = escapeHtml(intern.fullName);
       const safeRole = escapeHtml(intern.role);

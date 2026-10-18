@@ -1,26 +1,27 @@
 {
   "rules": {
     /* 
-      IT World — Firebase Realtime Database Security Rules
-      Secures internship applications and public intern profiles.
+      IT World — Firebase Realtime Database Security Rules (Demo Configuration)
+      Allows:
+      1. Public visitors to submit new internship applications (status: pending).
+      2. Public client to listen to internshipApplications in real time so that
+         when the administrator manually sets status: "approved" in the Firebase
+         Console, the applicant automatically appears under "Our Interns".
     */
-    
-    // Default lock down for all unmapped paths
+
     ".read": false,
     ".write": false,
 
     "internshipApplications": {
-      // Public visitors must NEVER read private applications
-      // Only authenticated company administrators can view submitted applications
-      ".read": "auth != null && auth.token.admin === true",
+      // Allows public client-side real-time listener for the "Our Interns" showcase
+      ".read": true,
       
       "$applicationId": {
-        // Public applicants can ONLY CREATE new applications (cannot update or delete)
+        // Public applicants can create new applications (cannot overwrite or delete existing)
         ".write": "!data.exists() && newData.exists()",
         
-        // Validation ensuring all mandatory fields are present and safe
+        // Validates required fields on submission
         ".validate": "newData.hasChildren(['applicationId', 'fullName', 'email', 'mobileNumber', 'interestedRole', 'collegeName', 'degree', 'studyYear', 'skills', 'introduction', 'status', 'submittedAt']) && " +
-                     "newData.child('status').val() === 'pending' && " +
                      "newData.child('fullName').isString() && newData.child('fullName').val().length > 1 && newData.child('fullName').val().length <= 100 && " +
                      "newData.child('email').isString() && newData.child('email').val().matches(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/) && " +
                      "newData.child('mobileNumber').isString() && " +
@@ -31,30 +32,6 @@
                      "newData.child('skills').isString() && " +
                      "newData.child('introduction').isString()"
       }
-    },
-
-    // Public Profiles: Sanitized directory for the 'Our Interns' showcase
-    // Contains ONLY public fields (fullName, role, imageUrl, status, profileVisible)
-    // Never contains passwords, emails, intern IDs, or application references
-    "publicProfiles": {
-      // Anyone can read if the profile is marked visible and active
-      ".read": true,
-      
-      // Only authorized administrators can add, edit, or remove public intern profiles
-      ".write": "auth != null && auth.token.admin === true",
-
-      "$internUid": {
-        ".validate": "newData.hasChildren(['fullName', 'role', 'status', 'profileVisible'])"
-      }
-    },
-
-    // Full Intern Directory (internal records with private emails & intern IDs)
-    "interns": {
-      // Restricted to authenticated interns and admins
-      // An authenticated intern can only read their own profile; admins can read all
-      ".read": "auth != null",
-      // Only admins or Cloud Functions can write intern records
-      ".write": "auth != null && auth.token.admin === true"
     }
   }
 }

@@ -1,122 +1,64 @@
-# IT World — Firebase Realtime Database Integration & Architecture Guide
+# IT World — Firebase Realtime Database Integration & Admin Approval Guide
 
-This document describes how Firebase is integrated into the IT World Career page, how to configure your Firebase project, and how the intern authentication workflow is architected.
+This document describes how Firebase is configured on the IT World Career page and how to manually approve internship applicants in the Firebase Console so they appear in real time under **"Our Interns"**.
 
 ---
 
-## 1. Firebase Project Setup
+## 1. Quick Approval Workflow (Firebase Console)
 
-### Step 1: Create a Firebase Project
-1. Go to the [Firebase Console](https://console.firebase.google.com/).
-2. Click **Add project** and name it (e.g., `it-world-website`).
-3. Google Analytics is optional; complete project creation.
+You do **not** need an admin dashboard or a second profile record. Everything is controlled directly from your existing `internshipApplications` database path:
 
-### Step 2: Register the Web App
-1. On your Project Overview page, click the **Web icon (`</>`)** to register a web app.
-2. Enter an app nickname (e.g. `IT World Web`).
-3. You do **not** need to check Firebase Hosting if using GitHub Pages.
-4. Click **Register app**.
-5. Copy the configuration object keys.
+### How to Approve an Applicant:
+1. Open the [Firebase Console](https://console.firebase.google.com/).
+2. Select your project: **`it-world-d8834`**.
+3. In the left navigation, click **Build > Realtime Database**.
+4. In the **Data** tab, expand **`internshipApplications`**.
+5. Locate the applicant record (for example, the record for **`Gopal Poddar`** with ID `-P4BqL8IA-Bc4grmqr97`).
+6. Hover over the **`status`** value (`"pending"`) and click the small pencil icon.
+7. Change the value from **`pending`** to **`approved`** and press **Enter**.
+8. **Result:** In any open browser window of `career.html`, that applicant will instantly appear under the **"Our Interns"** carousel without refreshing the page!
 
-### Step 3: Add Keys to `js/firebase-config.js`
-Open `js/firebase-config.js` and replace the placeholder values:
+### How to Add a Profile Picture (Optional):
+1. In the same applicant record in Firebase Console, hover over the application ID key and click the **`+` (Add child)** button.
+2. In the **Name** box, type: **`imageUrl`**
+3. In the **Value** box, paste an image link (e.g., `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300` or any HTTPS image).
+4. Click **Add**.
+5. **Result:** The intern's card in "Our Interns" will immediately display the photo. If no `imageUrl` is provided, the card displays a clean fallback avatar with the intern's initials (e.g. `GP`).
 
-```javascript
-export const firebaseConfig = {
-  apiKey: "AIzaSy...",
-  authDomain: "your-project-id.firebaseapp.com",
-  databaseURL: "https://your-project-id-default-rtdb.firebaseio.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "123456789...",
-  appId: "1:123456789:web:abcdef..."
-};
+### How to Remove an Applicant from Our Interns:
+- **Option A (Revert to pending):** Edit `status` back to **`pending`**. The intern will disappear from "Our Interns" immediately in real time.
+- **Option B (Reject):** Edit `status` to **`rejected`**. The intern will disappear immediately.
+- **Option C (Delete):** Click the **`x`** button next to the application record to delete it. The intern is immediately removed from the carousel.
+- **Empty State:** If there are 0 approved applicants, the section automatically displays:
+  *"Our intern community is growing. Check back soon to meet our interns."*
+
+---
+
+## 2. Realtime Database Security Rules for Demo
+
+In your Firebase Console under **Realtime Database > Rules**, make sure your rules allow public read so that visitors' browsers can listen in real time to the approved status:
+
+```json
+{
+  "rules": {
+    "internshipApplications": {
+      ".read": true,
+      "$applicationId": {
+        ".write": "!data.exists() && newData.exists()"
+      }
+    }
+  }
+}
 ```
 
-### Step 4: Create Realtime Database
-1. In the Firebase Console left menu, navigate to **Build > Realtime Database**.
-2. Click **Create Database**.
-3. Choose a location closest to your users (e.g., `asia-southeast1` for Singapore, or `us-central1`).
-4. Select **Start in locked mode**.
-
-### Step 5: Deploy Security Rules
-1. In your Realtime Database console, click the **Rules** tab.
-2. Copy the contents of [`database.rules.json`](../database.rules.json) into the editor.
-3. Click **Publish**.
+Click **Publish** after editing rules.
 
 ---
 
-## 2. Database Schema
+## 3. Data Flow & Security Details
 
-### `internshipApplications/{applicationId}`
-Stores applicant data when visitors submit the "Join as Intern" form.
-- **Access:** Write-only by visitors (creates new record with status `pending`); Read-only by authorized administrators.
-- **Fields:**
-  - `applicationId` (string, generated via Firebase `push().key`)
-  - `fullName` (string)
-  - `email` (string)
-  - `mobileNumber` (string)
-  - `interestedRole` (string)
-  - `collegeName` (string)
-  - `degree` (string)
-  - `studyYear` (string)
-  - `skills` (string)
-  - `introduction` (string)
-  - `profileUrl` (string, optional)
-  - `status` (string, default: `"pending"`)
-  - `submittedAt` (server timestamp)
-
-### `publicProfiles/{internUid}`
-Public-facing directory powering the **"Our Interns"** showcase.
-- **Access:** Public read (for profiles marked `profileVisible: true` and `status: "active"`). Write-restricted to admins.
-- **Fields:**
-  - `fullName` (string)
-  - `role` (string)
-  - `imageUrl` (string URL or path)
-  - `status` (string: `"active"`)
-  - `profileVisible` (boolean: `true`)
-
-> **Security Note:** Private intern data (emails, intern IDs, internal notes) are maintained under `interns/{internUid}` and are never exposed to public visitors.
-
----
-
-## 3. Intern ID & Account Creation Architecture
-
-As required by the security specification, **application submission and intern account creation are strictly separated**:
-
-1. **Submission Phase:** Candidate submits form &rarr; Record saved in `internshipApplications` with status `pending`.
-2. **Review Phase:** IT World team evaluates the candidate in an administrative dashboard.
-3. **Acceptance & Provisioning (Trusted Backend / Cloud Function):**
-   - When marked "Accepted", an authorized backend process (e.g. Firebase Cloud Function with Firebase Admin SDK) executes:
-     1. Generates a unique, standardized Intern ID (e.g., `ITW-2026-IN042`).
-     2. Creates a Firebase Authentication user account using the intern's verified email and an initial secure temporary password.
-     3. Stores the full private intern record in `interns/{uid}` mapping `internId` to Authentication `uid`.
-     4. Creates the sanitized public record in `publicProfiles/{uid}` with `profileVisible: true`.
-     5. Dispatches an onboarding email with their assigned Intern ID and temporary login link.
-
-> **CRITICAL SECURITY NOTE:**
-> Passwords, credential generation, and intern ID creation **must never occur in client-side JavaScript**. Doing so would expose administrative privileges. The client-side website prepares the data model, ready for the backend workflow.
-
----
-
-## 4. Application Deadline Enforcement
-
-- **Frontend Enforcement:** The Career page calculates the deadline (`25 October 2026, 23:59:59 Asia/Kolkata`) using standard JavaScript `Date` and `Intl.DateTimeFormat`. When expired, the button disables, "Applications Closed" displays, and form submission is blocked.
-- **Backend / Trusted Enforcement:**
-  Because GitHub Pages serves static client-side assets, client-side code alone cannot guarantee tamper-proof deadline enforcement (a visitor could modify local device time or send direct HTTP calls).
-  For production security, deadline enforcement should be enforced on the server side via:
-  1. A Firebase Realtime Database Rule validating `.write`: `now <= 1792953599000` (the Unix epoch millisecond timestamp corresponding to 25 Oct 2026 23:59:59 IST), or
-  2. A Firebase Cloud Function callable endpoint (`submitInternshipApplication`) that checks server time before writing to the database.
-
----
-
-## 5. Testing Without Live Firebase Credentials
-
-The Career page includes graceful fallback handling:
-- If Firebase credentials in `firebase-config.js` have not been replaced yet, the page loads smoothly without crashing.
-- The **Current Openings** section displays the sample openings with the required "Sample Opening" badges.
-- The **Join as Intern** section computes the deadline countdown.
-- The **Our Interns** section displays the friendly empty state:
-  *"Our intern community is growing. Check back soon to meet our interns."*
-- When the form is submitted without credentials, a helpful validation notice reminds the developer to configure `firebase-config.js` while preserving all user input.
-- Once valid Firebase credentials are added, the live Realtime Database listeners and submission activate automatically.
+- **Submission:** When a candidate fills out the "Join Now" form on `career.html`, a new push record is created under `internshipApplications/{applicationId}` with `status: "pending"`.
+- **Public Display:** The Career page listener filters records on the client side:
+  - Only records with `status === "approved"` are displayed in "Our Interns".
+  - Only public information is rendered: `fullName`, `interestedRole`, and `imageUrl`.
+  - Sensitive applicant information (e.g., `email`, `mobileNumber`, `collegeName`, `degree`, `introduction`, etc.) is **never rendered** to the DOM or displayed in the showcase.
