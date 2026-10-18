@@ -99,8 +99,8 @@ The visual design is driven by CSS custom properties defined in [`css/variables.
 
 - ✅ **Phase 1 — Structural Foundation:** Folder architecture, CSS design system, responsive navigation, footer, accessible mobile menu.
 - ✅ **Phase 2 — Finalize Home Page:** Hero section with system architecture visual, Who We Are intro with 3 principles, What We Do with 4 service cards, Why IT World with distinctive 2x2 architectural layout, How We Work 4-step process timeline, prominent Final CTA with direct contact placeholders, and unified browser tab branding & favicon across all 4 pages.
-- ⏳ **Phase 3 — About & Services Pages:** Detailed design of company story and full service offerings.
-- ⏳ **Phase 4 — Career Page:** Detailed career planning, opportunities, and recruitment interface.
+- ✅ **Phase 3 — About & Services Pages:** Detailed design of company story and full service offerings.
+- ✅ **Phase 4 — Career Page & Firebase Realtime Database:** Current Openings (.NET & React sample jobs), Autumn 2026 Internship recruitment with automated deadline logic, accessible application modal with validation, Firebase Realtime Database integration architecture, and dynamic "Our Interns" showcase.
 
 ## License
 

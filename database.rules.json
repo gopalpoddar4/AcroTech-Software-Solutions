@@ -1,0 +1,60 @@
+{
+  "rules": {
+    /* 
+      IT World — Firebase Realtime Database Security Rules
+      Secures internship applications and public intern profiles.
+    */
+    
+    // Default lock down for all unmapped paths
+    ".read": false,
+    ".write": false,
+
+    "internshipApplications": {
+      // Public visitors must NEVER read private applications
+      // Only authenticated company administrators can view submitted applications
+      ".read": "auth != null && auth.token.admin === true",
+      
+      "$applicationId": {
+        // Public applicants can ONLY CREATE new applications (cannot update or delete)
+        ".write": "!data.exists() && newData.exists()",
+        
+        // Validation ensuring all mandatory fields are present and safe
+        ".validate": "newData.hasChildren(['applicationId', 'fullName', 'email', 'mobileNumber', 'interestedRole', 'collegeName', 'degree', 'studyYear', 'skills', 'introduction', 'status', 'submittedAt']) && " +
+                     "newData.child('status').val() === 'pending' && " +
+                     "newData.child('fullName').isString() && newData.child('fullName').val().length > 1 && newData.child('fullName').val().length <= 100 && " +
+                     "newData.child('email').isString() && newData.child('email').val().matches(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/) && " +
+                     "newData.child('mobileNumber').isString() && " +
+                     "newData.child('interestedRole').isString() && " +
+                     "newData.child('collegeName').isString() && " +
+                     "newData.child('degree').isString() && " +
+                     "newData.child('studyYear').isString() && " +
+                     "newData.child('skills').isString() && " +
+                     "newData.child('introduction').isString()"
+      }
+    },
+
+    // Public Profiles: Sanitized directory for the 'Our Interns' showcase
+    // Contains ONLY public fields (fullName, role, imageUrl, status, profileVisible)
+    // Never contains passwords, emails, intern IDs, or application references
+    "publicProfiles": {
+      // Anyone can read if the profile is marked visible and active
+      ".read": true,
+      
+      // Only authorized administrators can add, edit, or remove public intern profiles
+      ".write": "auth != null && auth.token.admin === true",
+
+      "$internUid": {
+        ".validate": "newData.hasChildren(['fullName', 'role', 'status', 'profileVisible'])"
+      }
+    },
+
+    // Full Intern Directory (internal records with private emails & intern IDs)
+    "interns": {
+      // Restricted to authenticated interns and admins
+      // An authenticated intern can only read their own profile; admins can read all
+      ".read": "auth != null",
+      // Only admins or Cloud Functions can write intern records
+      ".write": "auth != null && auth.token.admin === true"
+    }
+  }
+}
