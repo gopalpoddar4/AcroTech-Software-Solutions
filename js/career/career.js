@@ -4,7 +4,7 @@
  * Handles:
  * 1. Rendering Section 1: Current Openings (from centralized jobs-data)
  * 2. Section 1 "Apply Now" informational modal
- * 3. Section 2: Join as Intern deadline calculation (25 October 2026 Asia/Kolkata)
+ * 3. Section 2: Join as Intern deadline calculation (31 October 2026 Asia/Kolkata)
  * 4. Section 2: Internship Application Modal & accessible Form Validation
  * 5. Firebase Realtime Database application submission (push ID, status pending)
  * 6. Section 3: Realtime "Our Interns" showcase listener (loading, empty, error states)
@@ -22,9 +22,9 @@ import { JOB_OPENINGS } from './jobs-data.js';
   // CONSTANTS & CONFIGURATION
   // =========================================================================
 
-  // Internship Application Deadline: 25 October 2026, 23:59:59 IST (+05:30)
+  // Internship Application Deadline: 31 October 2026, 23:59:59 IST (+05:30)
   // Asia/Kolkata timezone standard
-  const DEADLINE_DATE_STRING = "2026-10-25T23:59:59+05:30";
+  const DEADLINE_DATE_STRING = "2026-10-31T23:59:59+05:30";
   const DEADLINE_EPOCH = new Date(DEADLINE_DATE_STRING).getTime();
 
   // Reference to jobs list
@@ -205,7 +205,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
         statusPill.textContent = 'Applications Closed';
       }
       if (countdownText) {
-        countdownText.textContent = 'Application period ended on 25 October 2026.';
+        countdownText.textContent = 'Application period ended on 31 October 2026.';
       }
       if (closedNotice) {
         closedNotice.hidden = false;
@@ -1055,7 +1055,7 @@ import { JOB_OPENINGS } from './jobs-data.js';
     if (internsListenerRef && dbOff) {
       try {
         dbOff(internsListenerRef);
-      } catch (_) {}
+      } catch (_) { }
     }
   });
 
